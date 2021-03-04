@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'Show Topic' | trans }}{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+						{{ include('topic/_form.html.twig',{
+				'saveButton': true 
+			    }) }}
+		</div>
+	</div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+		{{ encore_entry_link_tags('topic_edit') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+		{{ encore_entry_script_tags('topic_edit') }}
+{% endblock %}

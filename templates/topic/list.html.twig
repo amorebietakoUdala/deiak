@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'List Topics' | trans }}{% endblock %}
+
+{% block body %}
+    <main class="container-fluid">
+	{# <div class="mt-2">
+	{{ include('vacation/_searchForm.html.twig',{
+	    'readonly': false,
+			    }) }}
+	</div> #}
+	<div class="container-fluid">
+	    <table id="taula" class="table bootstrap-table mt-3">
+		<thead>
+		    <tr class="row">
+			<th data-sortable="true">{{"topic.id" | trans | capitalize}}</th>
+			<th data-sortable="true">{{"topic.descriptionEs" | trans | capitalize}}</th>
+			<th data-sortable="true">{{"topic.descriptionEu" | trans | capitalize}}</th>
+			<th data-sortable="true" data-field="options">{{"table.options" | trans | capitalize}}</th>
+		    </tr>
+		</thead>
+		<tbody>
+		    {% if topics is defined and topics |length > 0 %}
+			{% for topic in topics %}
+			<tr>
+				<td>{{ topic.id }}</td>
+			    <td>{{ topic.descriptionEs }}</td>
+				<td>{{ topic.descriptionEu }}</td>
+				<td>
+				<a href="{{ path('topic_show', {'id': topic.id })}}" title="{{ 'consultation.show' | trans | capitalize }}"><i class="fa fa-eye"></i></a>&nbsp;
+				<a href="{{ path('topic_edit', {'id': topic.id })}}" title="{{ 'consultation.edit' | trans | capitalize }}"><i class="fa fa-edit"></i></a>&nbsp;
+				<a class="js-delete" href="#" title="{{ 'consultation.delete' | trans | capitalize }}" data-url="{{ path ("topic_delete",{"id" : topic.id}) }}" 
+						 data-confirmation="{{ "messages.confirmacion" | trans | capitalize }}"
+						 data-message="{{ "topic.delete.confirmation" | trans | capitalize }}"
+						 data-confirm = "{{ "messages.si" | trans | capitalize }}"
+						 data-cancel = "{{ "messages.no" | trans | capitalize }}"
+><i class="fa fa-trash"></i></a>&nbsp;
+				</td>
+				{# <td><a href="{{ path ("contact_show",{'contact': contact.id })}}"><i class="fa fa-eye"></i></a>
+				&nbsp;<a href="{{ path ("contact_edit",{'contact': contact.id })}}"><i class="fa fa-edit"></i></a>
+				&nbsp;<a class="js-delete" 
+						 href="#" 
+						 data-url="{{ path ("contact_delete",{"contact" : contact.id}) }}" 
+						 data-confirmation="{{ "messages.confirmacion" | trans | capitalize }}"
+						 data-message="{{ "contact.delete.confirmation" | trans | capitalize }}"
+						 data-confirm = "{{ "messages.si" | trans | capitalize }}"
+						 data-cancel = "{{ "messages.no" | trans | capitalize }}"
+					>
+					<i class="fa fa-trash"></i></a>
+			    </td> #}
+			</tr>
+			{% endfor %}
+		    {% else %}
+			<tr><td colspan="6">{{"messages.results0" | trans }}</td></tr>
+		    {% endif %}
+		</tbody>
+	    </table>
+		 <div id="toolbar">
+</div>
+	    {# <span class="pull-right"><a href="{{ path ('contact_new') }}" class="btn btn-primary btn-rounded fixed-bottom-right"><i class="fa fa-plus" title='{{ "btn.new" | trans | capitalize }}'></i></a></span> #}
+		 <span class="pull-right"><a href="{{ path('topic_new')}}" class="btn btn-primary btn-rounded fixed-bottom-right"><i class="fa fa-plus" title='{{ "btn.new" | trans | capitalize }}'></i></a></span>
+	</div>
+    </main>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+	{{ encore_entry_link_tags('topic_list') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{  parent() }}
+	{{ encore_entry_script_tags('topic_list') }}
+{% endblock javascripts %}

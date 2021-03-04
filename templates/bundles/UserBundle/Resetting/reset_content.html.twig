@@ -1,0 +1,26 @@
+{% trans_default_domain 'UserBundle' %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+			<div class="card margin-top-13 col-12">
+				<div class="card-block col">
+					<div class="text-center">
+						<div class="text-primary">{{ 'security.login.remember_password' | trans | capitalize  }}</div>
+						<hr class="mt-1 mb-1">
+					</div>
+					<div class="card-text">
+						{{ form_start(form, { 'action': path('fos_user_resetting_reset', {'token': token}), 'attr': { 'class': 'fos_user_resetting_reset' } }) }}
+						{{ form_widget(form) }}
+						<div>
+							<button class="col-3 btn btn-primary form-control waves-effect waves-light" type="submit" formnovalidate>
+								<i class="fa fa-lock left"></i>
+								{{ 'resetting.reset.submit' | trans | capitalize }}</button>
+						</div>
+						{{ form_end(form) }}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

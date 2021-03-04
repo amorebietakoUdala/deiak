@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+{% trans_default_domain 'user_bundle' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{{ encore_entry_link_tags('login') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	{{ encore_entry_script_tags('login') }}
+{% endblock %}
+
+{% block body %}
+	{% block user_content %}{% endblock %}
+{% endblock %}
+

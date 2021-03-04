@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'Show Topic' | trans }}{% endblock %}
+
+{% block body %}
+	<div class="container">
+		<div class="row">
+						{{ include('consultation/_form.html.twig',{
+				'saveButton': false,
+				'new': false
+			    }) }}
+		</div>
+	</div>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+		{{ encore_entry_link_tags('consultation_edit') }}
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+		{{ encore_entry_script_tags('consultation_edit') }}
+{% endblock %}

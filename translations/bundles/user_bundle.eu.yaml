@@ -1,0 +1,10 @@
+security:
+  login:
+    invalid_credentials: "Pasahitza eta erabiltzailea ez dira zuzenak"
+    system_error: "Sistema akatsa dela eta, ezin izan da erabiltzailea konprobatu"
+    remember_password: "Pasa hitza ahaztu zaizu?"
+    remember_me: "Oroitu"
+messages:
+  izena: "izena"
+  abizenak: "abizenak"
+  profila: "profila"

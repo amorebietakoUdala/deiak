@@ -1,0 +1,10 @@
+security:
+  login:
+    invalid_credentials: "El usuario y contraseña no son correctos"
+    system_error: "Debido a un error del sistema, no se puede comprobar el usuario"
+    remember_password: "Se te ha olvidado la contraseña?"
+    remember_me: "Recordarme"
+messages:
+  izena: "nombre"
+  abizenak: "apellidos"
+  profila: "perfil"

@@ -1,0 +1,36 @@
+{% trans_default_domain 'UserBundle' %}
+
+{% block body %}
+
+	<div class="container">
+		<div class="row">
+			<div class="card margin-top-13 col-12">
+				<div class="card-block col">
+					<div class="text-center">
+						<div class="text-primary">{{ 'security.login.remember_password' | trans | capitalize  }}</div>
+						<hr class="mt-1 mb-1">
+					</div>
+					<div class="card-text">
+						<form action="{{ path('user_security_resetRequest') }}" method="POST" class="user_security_resetRequest">
+							<div class="container">
+								<div class="row">
+									<div class="md-form form-group form-sm col-4">
+										<i class="fa fa-user prefix"></i>
+										<label for="email">{{ 'resetting.request.email'| trans | capitalize }}</label>
+										<input class="form-control" type="text" id="email" name="email" required="required"/>
+									</div>
+
+									<div class="md-form form-group form-sm col-4">
+										<button class="btn btn-primary form-control waves-effect waves-light" type="submit" formnovalidate>
+											<i class="fa fa-send left"></i>
+											{{ 'btn.security.resetRequest.submit' | trans | capitalize }}</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

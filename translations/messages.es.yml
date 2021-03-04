@@ -1,0 +1,93 @@
+messages.appTitle: "Deiak"
+
+navitem.administration: "Administración"
+navitem.users: "Usuarios"
+
+link.logout: "Salir"
+
+security.login.username: "Nombre de usuario"
+security.login.password: "Password"
+security.login.remember_me: "Recordarme"
+security.login.submit: "Entrar"
+security.login.invalid_credentials: 'El usuario y contraseña no son correctos'
+security.login.system_error: 'Debido a un error del sistema, no se puede comprobar el usuario'
+security.login.remember_password: 'Se te ha olvidado la contraseña?'
+security.password:
+security.resetted: 'La contraseña se ha cambiado'
+btn.loginera.itzuli: 'Volver a la página de login'
+'Credenciales no válidas.': 'Credenciales no válidas.'
+
+user.id: "Id"
+user.username: "Nombre de usuario"
+user.firstName: "Nombre"
+user.roles: "Roles"
+user.email: "Email"
+user.new_password: "Nueva contraseña"
+user.repeat_new_password: "Repetir nueva contraseña"
+
+messages.confirmacion: "Confirmación"
+messages.confirmationDetail: "¿Esta seguro de que desea eliminar el registro?"
+messages.results0: "No se han encontrado resultados"
+messages.si: "Sí"
+messages.no: "No"
+messages.userSaved: "El usuario se ha guardado correctamente"
+messages.userDeleted: "El usuario se ha eliminado correctamente"
+messages.existingUser: "El nombre de usuario o el email ya existe"
+
+confirmation.title: "Datos del pago"
+confirmation.pay: "Pagar"
+confirmation.cancel: "Cancelar"
+
+ROLE_USER: "Usuario"
+ROLE_ADMIN: "Administrador"
+
+table.options: "Opciones"
+
+# Menu
+navitem.topics: "Temas"
+navitem.topic.new: "Nuevo Tema"
+navitem.topic.list: "Listado"
+navitem.consultations: "Consultas"
+navitem.consultation.new: "Nueva consulta"
+navitem.consultation.list: "Listado"
+
+# Entities labels
+topic.id: "Id"
+topic.descriptionEs: "Descripción Castellano"
+topic.descriptionEu: "Descripción Euskera"
+
+consultation.id: "Id"
+consultation.startDate: "Inicio"
+consultation.endDate: "Fin"
+consultation.duration: "Duración"
+consultation.attendedBy: "Atendido por"
+consultation.topic: "Temas"
+consultation.details: "Detalles"
+consultation.show: "Ver"
+consultation.edit: "Editar"
+consultation.borrar: "Borrar"
+
+# buttons
+btn.cancel: "Volver"
+btn.save: "Guardar"
+btn.new: "Nuevo"
+btn.search: "Buscar"
+
+# Titles
+"Show Topic": "Ver tema"
+"List Topics": "Lista de temas"
+"Edit Topic": "Editar temas"
+"List Consultations": "Lista de consultas"
+
+# Confirmation messages
+topic.delete.confirmation: "¿Está seguro de que desea eliminar este tema?"
+consultation.topic.remove.confirmation: "¿Está seguro de que desea eliminar este tema de la consulta?"
+
+# Successfull messages
+topic.saved: "El asunto se ha guardado correctamente"
+topic.deleted: "El asunto se ha borrado correctamente"
+consultation.saved: "La consulta se ha guardado correctamente"
+consultation.deleted: "La consulta se ha borrado correctamente"
+
+# Error messages
+topic.notDeleted: "El asunto no se puede eliminar porque tiene consultas asignadas"
