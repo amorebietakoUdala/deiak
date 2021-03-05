@@ -12,8 +12,12 @@ class TopicFormType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('descriptionEs')
-            ->add('descriptionEu');
+            ->add('descriptionEs', null, [
+                'label' => 'topic.descriptionEs'
+            ])
+            ->add('descriptionEu', null, [
+                'label' =>  'topic.descriptionEu'
+            ]);
     }
 
     public function configureOptions(OptionsResolver $resolver)
