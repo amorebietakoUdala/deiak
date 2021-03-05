@@ -28,10 +28,12 @@
                <label class="form-check-label">
                {{ form_widget(t,{'attr': { 'class': 'form-check-input' } }) }}
                <span>{{ t.vars.label }}</span>
-               {{ form_errors(t) }}
                </label>
          </div>
-      {% endfor %}         
+      {% endfor %}
+      <div class="text-danger form-error">
+         {{ form_errors(form.topic) }}
+      </div>
    </div>
    <div class="container mt-2">
       <div class="row">

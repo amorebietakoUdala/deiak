@@ -1,0 +1,91 @@
+messages.appTitle: "Deiak"
+
+navitem.administration: "Administrazioa"
+navitem.users: "Erabiltzaileak"
+
+link.logout: "Irten"
+
+security.login.username: "Erabiltzailea"
+security.login.password: "Pasahitza"
+security.login.remember_me: "Gogora nazazu"
+security.login.submit: "Sartu"
+security.login.invalid_credentials: 'Erabiltzailea eta pasahitza ez dira zuzenak'
+security.login.system_error: 'Sistema akatsa dela eta, ezin da erabiltzailea konprobatu. Saiatu geroago.'
+security.login.remember_password: 'Pasahitza ahaztu zaizu?'
+security.password:
+security.resetted: 'Pasahitza ondo aldatu da'
+btn.loginera.itzuli: 'Login orrialdera itzuli'
+'Erabiltzailea eta pasahitza ez dira zuzenak.': 'Erabiltzailea eta pasahitza ez dira zuzenak.'
+
+user.id: "Id"
+user.username: "Erabiltzailea"
+user.firstName: "Izena"
+user.roles: "Rolak"
+user.email: "Emaila"
+user.new_password: "Pasahitz berria"
+user.repeat_new_password: "Errepikatu pasahitz berria"
+
+messages.confirmacion: "Konfirmazioa"
+messages.confirmationDetail: "¿Ziur al zaude erregistroa ezabatu nahi duzula?"
+messages.results0: "Ez da emaitzarik aurkitu"
+messages.si: "Bai"
+messages.no: "Ez"
+messages.userSaved: "Erabiltzailea ondo gorde da"
+messages.userDeleted: "Erabiltzailea ondo ezabatu da"
+messages.existingUser: "Erabiltzailea edo email jadanik existitzen da"
+
+ROLE_USER: "Erabiltzailea"
+ROLE_ADMIN: "Administratzailea"
+
+table.options: "Aukerak"
+
+# Menu
+navitem.topics: "Gaiak"
+navitem.topic.new: "Gai berria"
+navitem.topic.list: "Zerrenda"
+navitem.consultations: "Kontsultak"
+navitem.consultation.new: "Kontsulta berria"
+navitem.consultation.list: "Zerrenda"
+
+# Entities labels
+topic.id: "Id"
+topic.descriptionEs: "Deskripzioa Erdaraz"
+topic.descriptionEu: "Deskripzioa Euskaraz"
+
+consultation.id: "Id"
+consultation.startDate: "Hasiera data"
+consultation.endDate: "Amaiera data"
+consultation.duration: "Iraupena"
+consultation.attendedBy: "Arreta emailea"
+consultation.topic: "Gaiak"
+consultation.details: "Xehetasunak"
+consultation.show: "Ikusi"
+consultation.edit: "Editatu"
+consultation.delete: "Ezabatu"
+
+# buttons
+btn.cancel: "Itzuli"
+btn.save: "Gorde"
+btn.new: "Berria"
+btn.search: "Bilatu"
+
+# Titles
+"Show Topic": "Gaia ikusi"
+"List Topics": "Gaien zerrenda"
+"Edit Topic": "Gaiak editatu"
+"List Consultations": "Kontsulta zerrenda"
+
+# Confirmation messages
+topic.delete.confirmation: "¿Ziur zaude gaia ezabatu nahi duzula?"
+consultation.topic.remove.confirmation: "¿Ziur zaude kontsulta honen gaia kendu nahi duzula?"
+
+# Successfull messages
+topic.saved: "Gaia behar bezala gorde da"
+topic.deleted: "Gaia behar bezala ezabatu da"
+consultation.saved: "Kontsulta behar bezala gorde da"
+consultation.deleted: "Kontsulta behar bezala ezabatu da"
+
+# Error messages
+topic.notDeleted: "Gaia ez ezin da ezabatu zenbaik consultetan ezarrita dagoelako"
+maxResults.reached: "Gehienezko emaitza kopurura heldu zara (%maxResults%). Bilaketa xehaztu mesedez"
+validation.required: "Eremua nahieztaezkoa da."

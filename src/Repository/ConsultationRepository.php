@@ -5,6 +5,9 @@ namespace App\Repository;
 use App\Entity\Consultation;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Pagerfanta\Pagerfanta;
+use Pagerfanta\Doctrine\ORM\QueryAdapter;
+
 
 /**
  * @method Consultation|null find($id, $lockMode = null, $lockVersion = null)
@@ -24,14 +27,14 @@ class ConsultationRepository extends ServiceEntityRepository
      */
     public function findByConsultationFilter(Consultation $consultation, int $maxResults = 100)
     {
-        $qb = $this->createQueryBuilder('c');
-        $qb->innerJoin('c.topic', 't');
+        $qb = $this->createQueryBuilder('c')->distinct();
+        $qb->leftJoin('c.topic', 't');
         if ($consultation->getStartDate() !== null) {
             $qb->andWhere('c.startDate >= :startDate');
             $qb->setParameter('startDate', $consultation->getStartDate());
         }
         if ($consultation->getEndDate() !== null) {
-            $qb->andWhere('c.endDate <= :endDate');
+            $qb->andWhere('c.startDate <= :endDate');
             $qb->setParameter('endDate', $consultation->getEndDate());
         }
         if (count($consultation->getTopic()->toArray()) > 0) {
@@ -39,10 +42,8 @@ class ConsultationRepository extends ServiceEntityRepository
             $qb->setParameter('topic', $consultation->getTopic()->toArray());
         }
         $qb->orderBy('c.id', 'DESC');
-        $qb->setMaxResults($maxResults);
-        $qb->getQuery();
-        $result = $qb->getQuery()->getResult();
-        //        dd($qb->getQuery(), $result);
+        $result = array_slice($qb->getQuery()->getResult(), 0, $maxResults);
+        //        dd($result);
         return $result;
     }
 

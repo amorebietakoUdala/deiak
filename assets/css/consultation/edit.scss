@@ -1,2 +1,8 @@
 @import '~bootstrap-datepicker/dist/css/bootstrap-datepicker';
 @import '~eonasdan-bootstrap-datetimepicker/build/css/bootstrap-datetimepicker';
+
+
+.form-error>ul {
+    list-style-type: none;
+    padding: 0;
+}

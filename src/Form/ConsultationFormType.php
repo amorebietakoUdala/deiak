@@ -4,13 +4,14 @@ namespace App\Form;
 
 use App\Entity\Consultation;
 use App\Entity\Topic;
+use App\Validator\CheckboxRequired;
 use DateTime;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\IsTrue;
 
 class ConsultationFormType extends AbstractType
 {
@@ -21,14 +22,13 @@ class ConsultationFormType extends AbstractType
             ->add('startDate', DateTimeType::class, [
                 'widget' => 'single_text',
                 'html5' => false,
-                'format' => 'yyyy-MM-dd HH:mm',
-                'constraints' => [new NotBlank()],
+                'format' => 'yyyy-MM-dd HH:mm:ss',
             ])
             ->add('endDate', DateTimeType::class, [
                 'widget' => 'single_text',
                 'html5' => false,
-                'format' => 'yyyy-MM-dd HH:mm',
-                'empty_data' => (new DateTime())->format('Y-m-d H:i'),
+                'format' => 'yyyy-MM-dd HH:mm:ss',
+                'empty_data' => (new DateTime())->format('Y-m-d H:i:s'),
             ])
             ->add('topic', EntityType::class, [
                 //                'class' => 'App:Topic',
@@ -42,6 +42,9 @@ class ConsultationFormType extends AbstractType
                 },
                 'multiple' => true,
                 'expanded' => true,
+                'constraints' => [
+                    new CheckboxRequired(),
+                ]
             ]);
     }
 

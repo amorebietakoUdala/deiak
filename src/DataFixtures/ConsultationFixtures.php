@@ -11,7 +11,7 @@ class ConsultationFixtures extends BaseFixture implements DependentFixtureInterf
 {
     protected function loadData(ObjectManager $manager)
     {
-        $this->createMany(10, 'consultations', function ($i) use ($manager) {
+        $this->createMany(30, 'consultations', function ($i) use ($manager) {
             $consultation = new Consultation();
             $consultation->setStartDate($this->faker->dateTimeBetween('now', '+5 minutes'));
             $consultation->setEndDate($this->faker->dateTimeBetween('+5 minutes', '+10 minutes'));

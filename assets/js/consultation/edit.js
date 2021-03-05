@@ -15,11 +15,11 @@ $(function () {
    /* Initialization */
    $('#consultation_form_startDate').datetimepicker({
       locale: global.locale + '-' + global.locale,
-      format: 'YYYY-MM-DD HH:mm',
+      format: 'YYYY-MM-DD HH:mm:ss',
    }).attr('type', 'text'); // Honekin chromen ez da testua agertzen
    $('#consultation_form_endDate').datetimepicker({
       locale: global.locale + '-' + global.locale,
-      format: 'YYYY-MM-DD HH:mm',
+      format: 'YYYY-MM-DD HH:mm:ss',
    }).attr('type', 'text'); // Honekin chromen ez da testua agertzen
    /* End Initialization */
 
@@ -29,6 +29,7 @@ $(function () {
 
    /* Events */
    btnCancel.on('click', function () {
+      console.log('Back to Consultation List');
       Routing.setRoutingData(routes);
 
       var queryString = getQueryString();

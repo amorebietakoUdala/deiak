@@ -6,13 +6,13 @@ navitem.users: "Usuarios"
 link.logout: "Salir"
 
 security.login.username: "Nombre de usuario"
-security.login.password: "Password"
+security.login.password: "Contraseña"
 security.login.remember_me: "Recordarme"
 security.login.submit: "Entrar"
 security.login.invalid_credentials: 'El usuario y contraseña no son correctos'
 security.login.system_error: 'Debido a un error del sistema, no se puede comprobar el usuario'
 security.login.remember_password: 'Se te ha olvidado la contraseña?'
-security.password:
+security.password: 
 security.resetted: 'La contraseña se ha cambiado'
 btn.loginera.itzuli: 'Volver a la página de login'
 'Credenciales no válidas.': 'Credenciales no válidas.'
@@ -34,8 +34,6 @@ messages.userSaved: "El usuario se ha guardado correctamente"
 messages.userDeleted: "El usuario se ha eliminado correctamente"
 messages.existingUser: "El nombre de usuario o el email ya existe"
 
-confirmation.title: "Datos del pago"
-confirmation.pay: "Pagar"
 confirmation.cancel: "Cancelar"
 
 ROLE_USER: "Usuario"
@@ -65,7 +63,7 @@ consultation.topic: "Temas"
 consultation.details: "Detalles"
 consultation.show: "Ver"
 consultation.edit: "Editar"
-consultation.borrar: "Borrar"
+consultation.delete: "Borrar"
 
 # buttons
 btn.cancel: "Volver"
@@ -91,3 +89,5 @@ consultation.deleted: "La consulta se ha borrado correctamente"
 
 # Error messages
 topic.notDeleted: "El asunto no se puede eliminar porque tiene consultas asignadas"
+maxResults.reached: "Se ha alcanzado el máximo número de resultados (%maxResults%). Refine la búsqueda"
+validation.required: "Este campo es obligatorio."

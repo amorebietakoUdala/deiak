@@ -11,6 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\RequestEvent;
 use Symfony\Component\Routing\Annotation\Route;
+use Doctrine\ORM\Tools\Pagination\Paginator;
+use Pagerfanta\Adapter\NullAdapter;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 /**
  * @Route("/{_locale}")
@@ -31,6 +34,11 @@ class ConsultationController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var Consultation $data */
             $data = $form->getData();
+            if (empty($data->getTopic())) {
+                return $this->render('consultation/new.html.twig', [
+                    'form' => $form->createView(),
+                ]);
+            }
             $data->setEndDate(new DateTime());
             $data->setAttendedBy($this->getUser());
             $em = $this->getDoctrine()->getManager();
@@ -98,7 +106,7 @@ class ConsultationController extends AbstractController
     /**
      * @Route("/consultation", name="consultation_list", options={"expose"=true})
      */
-    public function list(Request $request): Response
+    public function list(Request $request, TranslatorInterface $translator): Response
     {
         $maxResults = $this->getParameter('maxResults');
         $form = $this->createForm(ConsultationSearchFormType::class, $consultation = new Consultation(), [
@@ -106,8 +114,21 @@ class ConsultationController extends AbstractController
         ]);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            $consultation = $form->getData();
-            $consultations = $this->getDoctrine()->getManager()->getRepository(Consultation::class)->findByConsultationFilter($consultation, $maxResults);
+            /** @var Consultation $filter */
+            $filter = $form->getData();
+            $consultations = $this->getDoctrine()->getManager()->getRepository(Consultation::class)->findByConsultationFilter($filter);
+            $consultations = array_slice($consultations, 0, $maxResults);
+            if ($maxResults === count($consultations)) {
+                $this->addFlash(
+                    'warning',
+                    $translator->trans(
+                        'maxResults.reached',
+                        [
+                            '%maxResults%' => $maxResults,
+                        ]
+                    )
+                );
+            }
             //            dd($consultations);
             return $this->render('consultation/list.html.twig', [
                 'consultations' => $consultations,
