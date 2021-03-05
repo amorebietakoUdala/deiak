@@ -34,8 +34,6 @@ messages.userSaved: "El usuario se ha guardado correctamente"
 messages.userDeleted: "El usuario se ha eliminado correctamente"
 messages.existingUser: "El nombre de usuario o el email ya existe"
 
-confirmation.cancel: "Cancelar"
-
 ROLE_USER: "Usuario"
 ROLE_ADMIN: "Administrador"
 
