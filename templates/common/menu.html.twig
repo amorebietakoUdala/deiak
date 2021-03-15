@@ -1,64 +1,62 @@
-<nav class="navbar navbar-expand navbar-dark bg-dark mb-1">
-  <a class="navbar-brand" href="#">&nbsp;</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+{% if is_granted('ROLE_USER') %}
+	<nav class="navbar navbar-expand navbar-dark bg-dark mb-1">
+		<a class="navbar-brand" href="#">&nbsp;</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-		<li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarCalls" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ 'navitem.consultations' | trans | capitalize }}
-            </a>
-            <div id="js-calls" class="dropdown-menu" aria-labelledby="navbarConsultations">
-                {# <a class="dropdown-item" href="{{ path('call_new') }}">{{"navitem.call.new" | trans | capitalize}}</a>
-					 <a class="dropdown-item" href="{{ path('call_list') }}">{{"navitem.call.list" | trans | capitalize}}</a> #}
-                <a class="dropdown-item" href="{{ path('consultation_new') }}">{{"navitem.consultation.new" | trans | capitalize}}</a>
-					 <a class="dropdown-item" href="{{ path('consultation_list') }}">{{"navitem.consultation.list" | trans | capitalize}}</a>
-            </div>
-		</li>
-      <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarTopics" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {{ 'navitem.topics' | trans | capitalize }}
-            </a>
-            <div id="js-topics" class="dropdown-menu" aria-labelledby="navbarTopics">
-                <a class="dropdown-item" href="{{ path('topic_new') }}">{{"navitem.topic.new" | trans | capitalize}}</a>
-					 <a class="dropdown-item" href="{{ path('topic_list') }}">{{"navitem.topic.list" | trans | capitalize}}</a>
-            </div>
-      </li>
-{#        {% if app.user %}
-        {% if is_granted('ROLE_USER') %}
-		<li class="nav-item dropdown">
-		  <a class="nav-link dropdown-toggle" href="#" id="navbarRecibos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			{{ 'navitem.receipts' | trans | capitalize }}
-		  </a>
-		  <div class="dropdown-menu" aria-labelledby="navbarRecibos">
-			  <a class="dropdown-item" href="{{ path('receipts_file_upload') }}">{{ 'navitem.sendFile' | trans |capitalize }}</a>
-			  <a class="dropdown-item" href="{{ path('receipts_file_list') }}">{{ 'navitem.list' | trans |capitalize }}</a>
-		  </div>
-		</li>
-        {% endif %}
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarCalls" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						{{ 'navitem.consultations' | trans | capitalize }}
+					</a>
+					<div id="js-calls" class="dropdown-menu" aria-labelledby="navbarConsultations">
+						<a class="dropdown-item" href="{{ path('consultation_new') }}">{{"navitem.consultation.new" | trans | capitalize}}</a>
+						<a class="dropdown-item" href="{{ path('consultation_list') }}">{{"navitem.consultation.list" | trans | capitalize}}</a>
+					</div>
+				</li>
+				<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarTopics" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						{{ 'navitem.topics' | trans | capitalize }}
+					</a>
+					<div id="js-topics" class="dropdown-menu" aria-labelledby="navbarTopics">
+						<a class="dropdown-item" href="{{ path('topic_new') }}">{{"navitem.topic.new" | trans | capitalize}}</a>
+						<a class="dropdown-item" href="{{ path('topic_list') }}">{{"navitem.topic.list" | trans | capitalize}}</a>
+					</div>
+				</li>
+				{#        {% if app.user %}
+								        {% if is_granted('ROLE_USER') %}
+										<li class="nav-item dropdown">
+										  <a class="nav-link dropdown-toggle" href="#" id="navbarRecibos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											{{ 'navitem.receipts' | trans | capitalize }}
+										  </a>
+										  <div class="dropdown-menu" aria-labelledby="navbarRecibos">
+											  <a class="dropdown-item" href="{{ path('receipts_file_upload') }}">{{ 'navitem.sendFile' | trans |capitalize }}</a>
+											  <a class="dropdown-item" href="{{ path('receipts_file_list') }}">{{ 'navitem.list' | trans |capitalize }}</a>
+										  </div>
+										</li>
+								        {% endif %}
+								
+								
+										{% if is_granted('ROLE_ADMIN') %}
+										<li class="nav-item dropdown">
+										  <a class="nav-link dropdown-toggle" href="#" id="navbarAdmin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+											{{ 'navitem.administration' | trans | capitalize }}
+										  </a>
+										  <div id="js-menu-administration" class="dropdown-menu" aria-labelledby="navbarAdmin">
+											  <a class="dropdown-item" href="{{ path('admin_user_list') }}">{{"navitem.users" | trans | capitalize}}</a>
+											  <a class="dropdown-item" href="{{ path('admin_list_payments') }}">{{"navitem.payments" | trans | capitalize}}</a>
+								              <a class="dropdown-item" href="{{ path('admin_concept_list') }}">{{"navitem.concepts" | trans | capitalize}}</a>
+								              <a class="dropdown-item" href="{{ path('admin_category_list') }}">{{"navitem.categories" | trans | capitalize}}</a>
+										  </div>
+										</li>
+										{% endif %}}
+								
+								      {% endif %}
+								#}
+			</ul>
+		</div>
 
-
-		{% if is_granted('ROLE_ADMIN') %}
-		<li class="nav-item dropdown">
-		  <a class="nav-link dropdown-toggle" href="#" id="navbarAdmin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			{{ 'navitem.administration' | trans | capitalize }}
-		  </a>
-		  <div id="js-menu-administration" class="dropdown-menu" aria-labelledby="navbarAdmin">
-			  <a class="dropdown-item" href="{{ path('admin_user_list') }}">{{"navitem.users" | trans | capitalize}}</a>
-			  <a class="dropdown-item" href="{{ path('admin_list_payments') }}">{{"navitem.payments" | trans | capitalize}}</a>
-              <a class="dropdown-item" href="{{ path('admin_concept_list') }}">{{"navitem.concepts" | trans | capitalize}}</a>
-              <a class="dropdown-item" href="{{ path('admin_category_list') }}">{{"navitem.categories" | trans | capitalize}}</a>
-		  </div>
-		</li>
-		{% endif %}}
-
-      {% endif %}
-#}
-    </ul>
-  </div>
-
-</nav>
-		
-
+	</nav>
+{% endif %}

@@ -47,6 +47,7 @@ class ConsultationController extends AbstractController
             $this->addFlash('success', 'consultation.saved');
             return $this->redirectToRoute('consultation_list');
         }
+
         return $this->render('consultation/new.html.twig', [
             'form' => $form->createView(),
         ]);

@@ -11,34 +11,35 @@ import 'eonasdan-bootstrap-datetimepicker';
 import 'pc-bootstrap4-datetimepicker';
 
 
-$(function () {
-   /* Initialization */
-   $('#consultation_form_startDate').datetimepicker({
-      locale: global.locale + '-' + global.locale,
-      format: 'YYYY-MM-DD HH:mm:ss',
-   }).attr('type', 'text'); // Honekin chromen ez da testua agertzen
-   $('#consultation_form_endDate').datetimepicker({
-      locale: global.locale + '-' + global.locale,
-      format: 'YYYY-MM-DD HH:mm:ss',
-   }).attr('type', 'text'); // Honekin chromen ez da testua agertzen
-   /* End Initialization */
+$(function() {
+    /* Initialization */
+    $('#consultation_form_startDate').datetimepicker({
+        locale: global.locale + '-' + global.locale,
+        format: 'YYYY-MM-DD HH:mm:ss',
+        useCurrent: true,
+    }).attr('type', 'text'); // Honekin chromen ez da testua agertzen
+    $('#consultation_form_endDate').datetimepicker({
+        locale: global.locale + '-' + global.locale,
+        format: 'YYYY-MM-DD HH:mm:ss',
+    }).attr('type', 'text'); // Honekin chromen ez da testua agertzen
+    /* End Initialization */
 
-   /* DOM */
-   var btnCancel = $("#cancel");
-   /* End DOM */
+    /* DOM */
+    var btnCancel = $("#cancel");
+    /* End DOM */
 
-   /* Events */
-   btnCancel.on('click', function () {
-      console.log('Back to Consultation List');
-      Routing.setRoutingData(routes);
+    /* Events */
+    btnCancel.on('click', function() {
+        console.log('Back to Consultation List');
+        Routing.setRoutingData(routes);
 
-      var queryString = getQueryString();
-      if (queryString !== "") {
-         $queryString = '?' + queryString;
-      }
-      window.location.href = Routing.generate('consultation_list', {
-         '_locale': global.locale
-      }) + queryString;
-   });
-   /* End Events */
+        var queryString = getQueryString();
+        if (queryString !== "") {
+            $queryString = '?' + queryString;
+        }
+        window.location.href = Routing.generate('consultation_list', {
+            '_locale': global.locale
+        }) + queryString;
+    });
+    /* End Events */
 });
