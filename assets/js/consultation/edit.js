@@ -37,7 +37,7 @@ $(function() {
         if (queryString !== "") {
             $queryString = '?' + queryString;
         }
-        window.location.href = Routing.generate('consultation_list', {
+        window.location.href = global.app_base + Routing.generate('consultation_list', {
             '_locale': global.locale
         }) + queryString;
     });
