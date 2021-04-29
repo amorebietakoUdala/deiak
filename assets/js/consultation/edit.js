@@ -13,11 +13,11 @@ import 'pc-bootstrap4-datetimepicker';
 
 $(function() {
     /* Initialization */
-    $('#consultation_form_startDate').datetimepicker({
-        locale: global.locale + '-' + global.locale,
-        format: 'YYYY-MM-DD HH:mm:ss',
-        useCurrent: true,
-    }).attr('type', 'text'); // Honekin chromen ez da testua agertzen
+    // $('#consultation_form_startDate').datetimepicker({
+    //     locale: global.locale + '-' + global.locale,
+    //     format: 'YYYY-MM-DD HH:mm:ss',
+    //     useCurrent: true,
+    // }).attr('type', 'text'); // Honekin chromen ez da testua agertzen
     $('#consultation_form_endDate').datetimepicker({
         locale: global.locale + '-' + global.locale,
         format: 'YYYY-MM-DD HH:mm:ss',

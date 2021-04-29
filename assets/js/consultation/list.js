@@ -56,7 +56,7 @@ $(function() {
     });
 
     function detailFormatter(index, row) {
-        return row[4];
+        return row[2];
     }
     $(document).on('click', '.js-delete', function(e) {
         e.preventDefault();

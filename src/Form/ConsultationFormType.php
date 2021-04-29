@@ -19,11 +19,11 @@ class ConsultationFormType extends AbstractType
     {
         $locale = $options['locale'];
         $builder
-            ->add('startDate', DateTimeType::class, [
-                'widget' => 'single_text',
-                'html5' => false,
-                'format' => 'yyyy-MM-dd HH:mm:ss',
-            ])
+            // ->add('startDate', DateTimeType::class, [
+            //     'widget' => 'single_text',
+            //     'html5' => false,
+            //     'format' => 'yyyy-MM-dd HH:mm:ss',
+            // ])
             ->add('endDate', DateTimeType::class, [
                 'widget' => 'single_text',
                 'html5' => false,
