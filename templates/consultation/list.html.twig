@@ -18,8 +18,8 @@
 						<tr class="row">
 							<th data-sortable="true">{{"consultation.id" | trans | capitalize}}</th>
 							<th data-sortable="true">{{"consultation.startDate" | trans | capitalize}}</th>
-							<th data-sortable="true">{{"consultation.endDate" | trans | capitalize}}</th>
-							<th data-sortable="true">{{"consultation.duration" | trans | capitalize}}</th>
+							{# <th data-sortable="true">{{"consultation.endDate" | trans | capitalize}}</th>
+														<th data-sortable="true">{{"consultation.duration" | trans | capitalize}}</th> #}
 							<th data-sortable="true" data-visible="false">{{"consultation.topic" | trans | capitalize}}</th>
 							<th data-sortable="true" data-field="options">{{"table.options" | trans | capitalize}}</th>
 						</tr>
@@ -29,11 +29,11 @@
 							<tr>
 								<td>{{ consultation.id }}</td>
 								<td>{{ consultation.startDate | format_datetime(pattern='Y-MM-dd HH:mm:ss') }}</td>
-								<td>{{ consultation.endDate | format_datetime(pattern='Y-MM-dd HH:mm:ss') }}</td>
-								{% set difference = date(consultation.endDate).diff(date(consultation.startDate)) %}
-								{% set minutesMinutes = difference.i %}
-								{% set minutesSeconds = difference.s %}
-								<td>{{ "%'.02d"|format(minutesMinutes)~':'~"%'.02d"|format(minutesSeconds) }}</td>
+								{# <td>{{ consultation.endDate | format_datetime(pattern='Y-MM-dd HH:mm:ss') }}</td>
+																{% set difference = date(consultation.endDate).diff(date(consultation.startDate)) %}
+																{% set minutesMinutes = difference.i %}
+																{% set minutesSeconds = difference.s %}
+																<td>{{ "%'.02d"|format(minutesMinutes)~':'~"%'.02d"|format(minutesSeconds) }}</td> #}
 								<td>
 									{% if consultation.topic is defined and consultation.topic |length > 0 %}
 										<div class="col-lg-4">

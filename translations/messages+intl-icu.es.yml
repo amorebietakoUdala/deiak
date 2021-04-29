@@ -9,13 +9,13 @@ security.login.username: "Nombre de usuario"
 security.login.password: "Contraseña"
 security.login.remember_me: "Recordarme"
 security.login.submit: "Entrar"
-security.login.invalid_credentials: 'El usuario y contraseña no son correctos'
-security.login.system_error: 'Debido a un error del sistema, no se puede comprobar el usuario'
-security.login.remember_password: 'Se te ha olvidado la contraseña?'
-security.password: 
-security.resetted: 'La contraseña se ha cambiado'
-btn.loginera.itzuli: 'Volver a la página de login'
-'Credenciales no válidas.': 'Credenciales no válidas.'
+security.login.invalid_credentials: "El usuario y contraseña no son correctos"
+security.login.system_error: "Debido a un error del sistema, no se puede comprobar el usuario"
+security.login.remember_password: "Se te ha olvidado la contraseña?"
+security.password:
+security.resetted: "La contraseña se ha cambiado"
+btn.loginera.itzuli: "Volver a la página de login"
+"Credenciales no válidas.": "Credenciales no válidas."
 
 user.id: "Id"
 user.username: "Nombre de usuario"
@@ -87,5 +87,5 @@ consultation.deleted: "La consulta se ha borrado correctamente"
 
 # Error messages
 topic.notDeleted: "El asunto no se puede eliminar porque tiene consultas asignadas"
-maxResults.reached: "Se ha alcanzado el máximo número de resultados (%maxResults%). Refine la búsqueda"
+maxResults.reached: "Se ha alcanzado el máximo número de resultados ({maxResults}). Refine la búsqueda"
 validation.required: "Este campo es obligatorio."

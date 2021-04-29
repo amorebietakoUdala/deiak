@@ -9,13 +9,13 @@ security.login.username: "Erabiltzailea"
 security.login.password: "Pasahitza"
 security.login.remember_me: "Gogora nazazu"
 security.login.submit: "Sartu"
-security.login.invalid_credentials: 'Erabiltzailea eta pasahitza ez dira zuzenak'
-security.login.system_error: 'Sistema akatsa dela eta, ezin da erabiltzailea konprobatu. Saiatu geroago.'
-security.login.remember_password: 'Pasahitza ahaztu zaizu?'
+security.login.invalid_credentials: "Erabiltzailea eta pasahitza ez dira zuzenak"
+security.login.system_error: "Sistema akatsa dela eta, ezin da erabiltzailea konprobatu. Saiatu geroago."
+security.login.remember_password: "Pasahitza ahaztu zaizu?"
 security.password:
-security.resetted: 'Pasahitza ondo aldatu da'
-btn.loginera.itzuli: 'Login orrialdera itzuli'
-'Erabiltzailea eta pasahitza ez dira zuzenak.': 'Erabiltzailea eta pasahitza ez dira zuzenak.'
+security.resetted: "Pasahitza ondo aldatu da"
+btn.loginera.itzuli: "Login orrialdera itzuli"
+"Erabiltzailea eta pasahitza ez dira zuzenak.": "Erabiltzailea eta pasahitza ez dira zuzenak."
 
 user.id: "Id"
 user.username: "Erabiltzailea"
@@ -87,5 +87,5 @@ consultation.deleted: "Kontsulta behar bezala ezabatu da"
 
 # Error messages
 topic.notDeleted: "Gaia ez ezin da ezabatu zenbaik consultetan ezarrita dagoelako"
-maxResults.reached: "Gehienezko emaitza kopurura heldu zara (%maxResults%). Bilaketa xehaztu mesedez"
+maxResults.reached: "Gehienezko emaitza kopurura heldu zara ({maxResults}). Bilaketa xehaztu mesedez"
 validation.required: "Eremua nahieztaezkoa da."
