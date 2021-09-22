@@ -4,7 +4,6 @@ namespace App\DataFixtures;
 
 use App\Entity\Topic;
 use Doctrine\Common\Persistence\ObjectManager;
-use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class TopicFixtures extends BaseFixture
 {

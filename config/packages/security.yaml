@@ -1,12 +1,17 @@
 security:
-    encoders:
-        legacy_bcrypt:
-            algorithm: bcrypt
-            
+    # https://symfony.com/doc/current/security/authenticator_manager.html
+    enable_authenticator_manager: true
+    # https://symfony.com/doc/current/security.html#c-hashing-passwords
+    password_hashers:
+        legacy:
+            algorithm: sodium
+
         App\Entity\User:
-            algorithm: auto
-            migrate_from: 
-                - legacy_bcrypt
+            algorithm: bcrypt
+            migrate_from:
+                - legacy
+
+        Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface: 'auto'
 
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
@@ -15,28 +20,19 @@ security:
             entity:
                 class: App\Entity\User
                 property: username
-#        logout: 
-#            path: app_logout
 
-        
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
         main:
-            anonymous: true
             lazy: true
             provider: amreu_user_provider
 
-            guard:
-                authenticators:
-                    - amreu.login.form.authenticator
-                entry_point: amreu.login.form.authenticator
-                
-            form_login:
-                login_path: user_security_login_check
-                check_path: user_security_login_check
-                
+            custom_authenticators:
+                - amreu.login.form.passportauthenticator
+            entry_point: amreu.login.form.passportauthenticator
+
             logout:
                 path: user_security_logout
                 # where to redirect after logout
@@ -55,8 +51,8 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^/login$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/$, roles: PUBLIC_ACCESS }
+        - { path: ^/login$, roles: PUBLIC_ACCESS }
         - { path: ^/[es|eu], roles: ROLE_USER }
         - { path: ^/api/, role: ROLE_USER }
         - { path: ^/admin, roles: ROLE_ADMIN }
