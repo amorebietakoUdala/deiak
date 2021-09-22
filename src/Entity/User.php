@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use AMREU\UserBundle\Model\UserInterface as AMREUserInterface;
 use AMREU\UserBundle\Model\User as BaseUser;
 
@@ -10,7 +11,7 @@ use AMREU\UserBundle\Model\User as BaseUser;
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User extends BaseUser implements AMREUserInterface
+class User extends BaseUser implements AMREUserInterface, PasswordAuthenticatedUserInterface
 {
     /**
      * @ORM\Id()
