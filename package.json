@@ -9,7 +9,7 @@
         "@symfony/webpack-encore": "^4.1.1",
         "bazinga-translator": "^3.0.1",
         "bootstrap": "^4.5.0",
-        "bootstrap-table": "^1.20.2",
+        "bootstrap-table": "^1.16.0",
         "core-js": "^3.0.0",
         "file-loader": "^6.0.0",
         "jquery": "^3.5.1",
@@ -19,7 +19,7 @@
         "sass-loader": "^13.2.0",
         "select2": "^4.1.0-rc.0",
         "sweetalert2": "^9.13.1",
-        "tableexport.jquery.plugin": "^1.25.0",
+        "tableexport.jquery.plugin": "^1.10.19",
         "webpack": "^5.75.0",
         "webpack-cli": "^4.9.2",
         "webpack-notifier": "^1.15.0"
@@ -31,5 +31,9 @@
         "dev": "encore dev",
         "watch": "encore dev --watch",
         "build": "encore production --progress"
+    },
+    "dependencies": {
+        "bootstrap-table": "^1.16.0",
+        "tableexport.jquery.plugin": "^1.10.19"
     }
 }

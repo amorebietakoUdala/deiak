@@ -4,7 +4,7 @@ import $ from 'jquery';
 const routes = require('../../../public/js/fos_js_routes.json');
 import Routing from '../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min.js';
 import getQueryString from '../common/utils.js';
-import { TempusDominus } from '@eonasdan/tempus-dominus';
+import { TempusDominus, extend } from '@eonasdan/tempus-dominus';
 import customDateFormat from '@eonasdan/tempus-dominus/dist/plugins/customDateFormat';
 
 
