@@ -4,25 +4,37 @@ import $ from 'jquery';
 const routes = require('../../../public/js/fos_js_routes.json');
 import Routing from '../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min.js';
 import getQueryString from '../common/utils.js';
-import 'bootstrap-datepicker';
-import 'bootstrap-datepicker/js/locales/bootstrap-datepicker.es';
-import 'bootstrap-datepicker/js/locales/bootstrap-datepicker.eu';
-import 'eonasdan-bootstrap-datetimepicker';
-import 'pc-bootstrap4-datetimepicker';
+import { TempusDominus } from '@eonasdan/tempus-dominus';
+import customDateFormat from '@eonasdan/tempus-dominus/dist/plugins/customDateFormat';
 
 
 $(function() {
-    /* Initialization */
-    // $('#consultation_form_startDate').datetimepicker({
-    //     locale: global.locale + '-' + global.locale,
-    //     format: 'YYYY-MM-DD HH:mm:ss',
-    //     useCurrent: true,
-    // }).attr('type', 'text'); // Honekin chromen ez da testua agertzen
-    $('#consultation_form_endDate').datetimepicker({
-        locale: global.locale + '-' + global.locale,
-        format: 'YYYY-MM-DD HH:mm:ss',
-    }).attr('type', 'text'); // Honekin chromen ez da testua agertzen
-    /* End Initialization */
+    var current_locale = $('html').attr("lang");
+    $('.js-datepicker').each((i,v) => {
+        extend(customDateFormat);
+        new TempusDominus(v,{
+            display: {
+              buttons: {
+                close: true,
+                clear: true,
+              },
+              components: {
+                useTwentyfourHour: true,
+                decades: false,
+                year: true,
+                month: true,
+                date: true,
+                clock: false,
+              },
+            },
+            debug: true,
+            localization: {
+              locale: current_locale+'-'+current_locale.toUpperCase(),
+              dayViewHeaderFormat: { month: 'long', year: 'numeric' },
+              format: 'yyyy-MM-dd HH:mm',
+            },
+        });
+    });
 
     /* DOM */
     var btnCancel = $("#cancel");
@@ -30,7 +42,6 @@ $(function() {
 
     /* Events */
     btnCancel.on('click', function() {
-        console.log('Back to Consultation List');
         Routing.setRoutingData(routes);
 
         var queryString = getQueryString();

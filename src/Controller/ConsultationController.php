@@ -110,7 +110,13 @@ class ConsultationController extends AbstractController
     public function list(Request $request, TranslatorInterface $translator): Response
     {
         $maxResults = $this->getParameter('maxResults');
-        $form = $this->createForm(ConsultationSearchFormType::class, $consultation = new Consultation(), [
+        $todayStr = (new DateTime())->format('Y-m-d');
+        $today = new DateTime($todayStr);
+        $now = new DateTime();
+        $consultation = new Consultation();
+        $consultation->setStartDate($today);
+        $consultation->setEndDate($now);
+        $form = $this->createForm(ConsultationSearchFormType::class, $consultation, [
             'locale' => $request->getLocale(),
         ]);
         $form->handleRequest($request);
@@ -136,12 +142,7 @@ class ConsultationController extends AbstractController
                 'form' => $form->createView(),
             ]);
         }
-        $todayStr = (new DateTime())->format('Y-m-d');
-        $today = new DateTime($todayStr);
-        $now = new DateTime();
-        $consultation->setStartDate($today);
-        $consultation->setEndDate($now);
-        $form->setData($consultation);
+//        $form->setData($consultation);
         $consultations = $this->getDoctrine()->getManager()->getRepository(Consultation::class)->findByConsultationFilter($consultation, $maxResults);
 
         return $this->render('consultation/list.html.twig', [

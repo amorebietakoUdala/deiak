@@ -10,7 +10,6 @@ function getQueryString() {
 
 function changeLocaleTo(locale) {
    var uri = document.location.href;
-   console.log(locale);
    if (locale === 'eu') {
       var url = uri.replace('/es/', '/' + locale + '/');
    } else {

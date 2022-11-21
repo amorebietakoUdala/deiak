@@ -12,7 +12,6 @@ global.locale = null;
 
 $(function () {
     global.locale = $('html').attr("lang");
-    console.log(global.locale);
 
     /* DOM */
     var linkLocaleEs = $('#js-locale-es');

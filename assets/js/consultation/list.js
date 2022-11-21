@@ -1,12 +1,9 @@
 import '../../css/consultation/list.scss';
 
 import '../common/table-list';
-import 'bootstrap-datepicker';
-import 'bootstrap-datepicker/js/locales/bootstrap-datepicker.es';
-import 'bootstrap-datepicker/js/locales/bootstrap-datepicker.eu';
-import 'eonasdan-bootstrap-datetimepicker';
-import 'pc-bootstrap4-datetimepicker';
 import '../common/select2';
+import { TempusDominus, extend } from '@eonasdan/tempus-dominus';
+import customDateFormat from '@eonasdan/tempus-dominus/dist/plugins/customDateFormat';
 
 import {
     createConfirmationAlert,
@@ -16,6 +13,7 @@ const routes = require('../../../public/js/fos_js_routes.json');
 import Routing from '../../../vendor/friendsofsymfony/jsrouting-bundle/Resources/public/js/router.min.js';
 
 $(function() {
+    var current_locale = $('html').attr("lang");
     /* DOM */
     var $button = $('#button');
     var $table = $('#taula');
@@ -64,10 +62,32 @@ $(function() {
         createConfirmationAlert(url);
     });
 
-    $('.js-datepicker').datetimepicker({
-        locale: global.locale + '-' + global.locale,
-        format: 'YYYY-MM-DD HH:mm',
-    }).attr('type', 'text'); // Honekin chromen ez da testua agertzen
+    $('.js-datepicker').each((i,v) => {
+        extend(customDateFormat);
+        new TempusDominus(v,{
+            display: {
+              buttons: {
+                close: true,
+                clear: true,
+              },
+              components: {
+                useTwentyfourHour: true,
+                decades: false,
+                year: true,
+                month: true,
+                date: true,
+                clock: false,
+              },
+            },
+            debug: true,
+            localization: {
+              locale: current_locale+'-'+current_locale.toUpperCase(),
+              dayViewHeaderFormat: { month: 'long', year: 'numeric' },
+              format: 'yyyy-MM-dd HH:mm',
+            },
+        });
+    });
+
 
     $('.js-topic').select2();
     $(document).on('click', '.js-details', function(e) {
