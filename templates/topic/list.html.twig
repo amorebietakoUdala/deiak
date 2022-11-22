@@ -12,12 +12,12 @@
 	<div class="container-fluid">
 	    <table id="taula" class="table bootstrap-table mt-3">
 		<thead>
-		    <tr class="row">
-			<th data-sortable="true">{{"topic.id" | trans | capitalize}}</th>
-			<th data-sortable="true">{{"topic.descriptionEs" | trans | capitalize}}</th>
-			<th data-sortable="true">{{"topic.descriptionEu" | trans | capitalize}}</th>
-			<th data-sortable="true" data-field="options">{{"table.options" | trans | capitalize}}</th>
-		    </tr>
+		   <tr>
+				<th data-sortable="true">{{"topic.id" | trans | capitalize}}</th>
+				<th data-sortable="true">{{"topic.descriptionEs" | trans | capitalize}}</th>
+				<th data-sortable="true">{{"topic.descriptionEu" | trans | capitalize}}</th>
+				<th data-sortable="true" data-field="options">{{"table.options" | trans | capitalize}}</th>
+		   </tr>
 		</thead>
 		<tbody>
 		    {% if topics is defined and topics |length > 0 %}

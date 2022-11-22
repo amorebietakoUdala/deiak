@@ -37,7 +37,7 @@ $(function() {
         striped: true,
         sortStable: true,
         detailView: true,
-        detailViewIcon: false,
+        detailViewIcon: true,
         detailViewByClick: false,
         detailFormatter: detailFormatter,
         pageSize: 10,
