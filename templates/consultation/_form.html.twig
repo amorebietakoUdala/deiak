@@ -6,13 +6,7 @@
 }}
 {{ form_errors(form) }}
 <div class="container">
-	<div
-		class="row">
-		{# <div class="col-lg-3 col-md-4">
-		            <label class="js-startDate-label" for="startDate">{{ 'consultation.startDate' | trans | capitalize }}</label>
-		            {{ form_widget(form.startDate, { 'attr': { 'class' : 'form-control js-datepicker' } }) }}
-		            {{ form_errors(form.startDate) }}
-		         </div> #}
+	<div class="row">
 		{% if ( new == false ) %}
 			<div class="col-lg-3 col-md-4">
 				<label class="js-endDate-label" for="endDate">{{ 'consultation.endDate' | trans | capitalize }}</label>
@@ -24,9 +18,7 @@
 </div>
 <div class="container">
 	{% for t in form.topic %}
-		<div
-			class="col form-check-inline">
-			{# <div class="form-check-inline"> #}
+		<div class="col form-check-inline">
 			<label class="form-check-label">
 				{{ form_widget(t,{'attr': { 'class': 'form-check-input' } }) }}
 				<span>{{ t.vars.label }}</span>

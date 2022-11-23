@@ -24,37 +24,8 @@
 						<a class="dropdown-item" href="{{ path('topic_new') }}">{{"navitem.topic.new" | trans | capitalize}}</a>
 						<a class="dropdown-item" href="{{ path('topic_list') }}">{{"navitem.topic.list" | trans | capitalize}}</a>
 					</div>
-				</li>
-				{#        {% if app.user %}
-				                  {% if is_granted('ROLE_USER') %}
-				              <li class="nav-item dropdown">
-				                <a class="nav-link dropdown-toggle" href="#" id="navbarRecibos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				                {{ 'navitem.receipts' | trans | capitalize }}
-				                </a>
-				                <div class="dropdown-menu" aria-labelledby="navbarRecibos">
-				                  <a class="dropdown-item" href="{{ path('receipts_file_upload') }}">{{ 'navitem.sendFile' | trans |capitalize }}</a>
-				                  <a class="dropdown-item" href="{{ path('receipts_file_list') }}">{{ 'navitem.list' | trans |capitalize }}</a>
-				                </div>
-				              </li>
-				                  {% endif %}
-				          
-				          
-				              {% if is_granted('ROLE_ADMIN') %}
-				              <li class="nav-item dropdown">
-				                <a class="nav-link dropdown-toggle" href="#" id="navbarAdmin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				                {{ 'navitem.administration' | trans | capitalize }}
-				                </a>
-				                <div id="js-menu-administration" class="dropdown-menu" aria-labelledby="navbarAdmin">
-				                  <a class="dropdown-item" href="{{ path('admin_user_list') }}">{{"navitem.users" | trans | capitalize}}</a>
-				                  <a class="dropdown-item" href="{{ path('admin_list_payments') }}">{{"navitem.payments" | trans | capitalize}}</a>
-				                        <a class="dropdown-item" href="{{ path('admin_concept_list') }}">{{"navitem.concepts" | trans | capitalize}}</a>
-				                        <a class="dropdown-item" href="{{ path('admin_category_list') }}">{{"navitem.categories" | trans | capitalize}}</a>
-				                </div>
-				              </li>
-				              {% endif %}}
-				          
-				                {% endif %}
-				          #}
+</li>
+
 				{% if is_granted('ROLE_ADMIN') %}
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="navbarAdmin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
