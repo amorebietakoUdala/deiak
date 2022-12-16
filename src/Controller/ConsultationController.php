@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Controller\BController;
+use App\Controller\BaseController;
 use App\Entity\Consultation;
 use App\Form\ConsultationFormType;
 use App\Form\ConsultationSearchFormType;
@@ -18,7 +18,7 @@ use Symfony\Contracts\Translation\TranslatorInterface;
 /**
  * @Route("/{_locale}")
  */
-class ConsultationController extends BController
+class ConsultationController extends BaseController
 {
 
     private ConsultationRepository $repo;

@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Controller\BController;
+use App\Controller\BaseController;
 use App\Entity\Topic;
 use App\Form\TopicFormType;
 use App\Repository\TopicRepository;
@@ -14,9 +14,8 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/{_locale}")
  */
-class TopicController extends BController
+class TopicController extends BaseController
 {
-
     private TopicRepository $repo;
     private EntityManagerInterface $em;
     

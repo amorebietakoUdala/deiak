@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class BController extends AbstractController
+class BaseController extends AbstractController
 {
     protected array $queryParams = []; 
 

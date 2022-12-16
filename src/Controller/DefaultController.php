@@ -2,11 +2,11 @@
 
 namespace App\Controller;
 
-use App\Controller\BController;
+use App\Controller\BaseController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DefaultController extends BController
+class DefaultController extends BaseController
 {
     /**
      * @Route("/", name="app_home")
