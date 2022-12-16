@@ -97,7 +97,6 @@ export default class extends Controller {
     }
 
     createQueryParameters(event) {
-        console.log(this.$table, this.$table != null);
         if ( this.$table != null ) {
             this.setPaginationParameters();
         }
@@ -128,10 +127,6 @@ export default class extends Controller {
         const pageSize = this.$table.bootstrapTable('getOptions').pageSize != null ? this.$table.bootstrapTable('getOptions').pageSize : 10;
         const sortName = this.$table.bootstrapTable('getOptions').sortName != null ? this.$table.bootstrapTable('getOptions').sortName : 0;
         const sortOrder = this.$table.bootstrapTable('getOptions').sortOrder != null ? this.$table.bootstrapTable('getOptions').sortOrder : 'asc';
-        console.log('page: ' + page);
-        console.log('pageSize: ' + pageSize);
-        console.log('sortName: ' + sortName);
-        console.log('sortOrder: ' + sortOrder);
         this.params.set('page', page);
         this.params.set('pageSize', pageSize);
         this.params.set('sortName', sortName);
