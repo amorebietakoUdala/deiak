@@ -1,6 +1,3 @@
-import Translator from 'bazinga-translator';
-const translations = require('../../../public/translations/' + Translator.locale + '.json');
-
 import Swal from 'sweetalert2';
 
 export function showAlert(confirmURL) {

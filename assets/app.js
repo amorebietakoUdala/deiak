@@ -8,10 +8,6 @@ import 'popper.js';
 
 import '@fortawesome/fontawesome-free/js/all.js';
 
-import {
-    changeLocaleTo
-} from './js/common/utils';
-
 global.app_base = '/deiak';
 global.locale = $('html').attr("lang");
 
