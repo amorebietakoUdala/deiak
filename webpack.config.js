@@ -24,32 +24,28 @@ Encore
  * Each entry will result in one JavaScript file (e.g. app.js)
  * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
  */
-.addEntry('app', './assets/js/app.js')
-    .addEntry('login', './assets/js/security/login.js')
-    .addEntry('user_list', './assets/js/user/list.js')
-    .addEntry('user_edit', './assets/js/user/edit.js')
-    .addEntry('topic_list', './assets/js/topic/list.js')
-    .addEntry('topic_edit', './assets/js/topic/edit.js')
-    .addEntry('consultation_list', './assets/js/consultation/list.js')
-    .addEntry('consultation_edit', './assets/js/consultation/edit.js')
+    .addEntry('app', './assets/app.js')
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
 
-// When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
-.splitEntryChunks()
+    // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
+    .enableStimulusBridge('./assets/controllers.json')
 
-// will require an extra script tag for runtime.js
-// but, you probably want this, unless you're building a single-page app
-.enableSingleRuntimeChunk()
+    // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
+    .splitEntryChunks()
 
-/*
- * FEATURE CONFIG
- *
- * Enable & configure other features below. For a full
- * list of features, see:
- * https://symfony.com/doc/current/frontend.html#adding-more-features
- */
-.cleanupOutputBeforeBuild()
+    // will require an extra script tag for runtime.js
+    // but, you probably want this, unless you're building a single-page app
+    .enableSingleRuntimeChunk()
+
+    /*
+    * FEATURE CONFIG
+    *
+    * Enable & configure other features below. For a full
+    * list of features, see:
+    * https://symfony.com/doc/current/frontend.html#adding-more-features
+    */
+    .cleanupOutputBeforeBuild()
     .enableBuildNotifications()
     .enableSourceMaps(!Encore.isProduction())
     // enables hashed filenames (e.g. app.abc123.css)

@@ -1293,10 +1293,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hotwired/stimulus@npm:^3.1.1":
-  version: 3.1.1
-  resolution: "@hotwired/stimulus@npm:3.1.1"
-  checksum: acb70e4b11495f125305171e67569f961b067059d71ecbeb0cacd794517bd2f3a9d9760c35e6ebcc098b8e083302a8511a8537bfec6bab7ed1fba950f653687e
+"@hotwired/stimulus@npm:^3.0.0":
+  version: 3.2.1
+  resolution: "@hotwired/stimulus@npm:3.2.1"
+  checksum: 2617b10fb3ca0fb05205526693cbc9ea17fca84f40d8d95d0ce8d58f903aa74e020da858adc72f056f777f4854bdd7f5ee6d69810ecb17412af43d6ffb78997e
+  languageName: node
+  linkType: hard
+
+"@hotwired/turbo@npm:^7.0.1":
+  version: 7.2.4
+  resolution: "@hotwired/turbo@npm:7.2.4"
+  checksum: 83cbcda22cf2fa251a30aa898a57ea6dd9a2b0de71f4d3e364baa300a01a8d52631ae13b44533b516965a557d663788325a930fbc3edab3f85616126b7834c4c
   languageName: node
   linkType: hard
 
@@ -1446,7 +1453,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.10.1":
+"@popperjs/core@npm:^2.10.1, @popperjs/core@npm:^2.11.6":
   version: 2.11.6
   resolution: "@popperjs/core@npm:2.11.6"
   checksum: 47fb328cec1924559d759b48235c78574f2d71a8a6c4c03edb6de5d7074078371633b91e39bbf3f901b32aa8af9b9d8f82834856d2f5737a23475036b16817f0
@@ -1484,9 +1491,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@symfony/webpack-encore@npm:^4.1.1":
-  version: 4.1.1
-  resolution: "@symfony/webpack-encore@npm:4.1.1"
+"@symfony/ux-turbo@file:vendor/symfony/ux-turbo/assets::locator=root-workspace-0b6124%40workspace%3A.":
+  version: 0.1.0
+  resolution: "@symfony/ux-turbo@file:vendor/symfony/ux-turbo/assets#vendor/symfony/ux-turbo/assets::hash=5324e9&locator=root-workspace-0b6124%40workspace%3A."
+  peerDependencies:
+    "@hotwired/stimulus": ^3.0.0
+    "@hotwired/turbo": ^7.0.1
+  checksum: 71dde982b47192511b38de2bd1062e9e15a59a8ac1d7e8761209d9c17b2950c9a9f3da8cdf0f521e95ee0034883ba237eb69ff4d95c2c1211f93cb01093c7bf5
+  languageName: node
+  linkType: hard
+
+"@symfony/webpack-encore@npm:^4.1.2":
+  version: 4.1.2
+  resolution: "@symfony/webpack-encore@npm:4.1.2"
   dependencies:
     "@nuxt/friendly-errors-webpack-plugin": ^2.5.1
     assets-webpack-plugin: 7.0.*
@@ -1517,7 +1534,7 @@ __metadata:
     "@symfony/stimulus-bridge": ^3.0.0
     "@vue/babel-helper-vue-jsx-merge-props": ^1.0.0
     "@vue/babel-preset-jsx": ^1.0.0
-    "@vue/compiler-sfc": ^3.0.2
+    "@vue/compiler-sfc": ^2.6 || ^3.0.2
     eslint: ^8.0.0
     eslint-webpack-plugin: ^3.1.0
     file-loader: ^6.0.0
@@ -1605,7 +1622,7 @@ __metadata:
       optional: true
   bin:
     encore: bin/encore.js
-  checksum: 3454b07b55dacab557f6e6c7297dede66788b8d7009acb6c5f0c6b4e8e78cb45bd34d5d28bfea6042b5f6303179d02c3ad1c2663619bd2a1f60809b24539aa86
+  checksum: f0a5fda1094c887f9fe868a7987f75b6cfb0f2caedaf7508f69dbc96fe91ae6a1f6eeeb8b8f72efab6f5bd87c0d7a2818c65bfb2186b35585511e2c3925f0677
   languageName: node
   linkType: hard
 
@@ -2517,7 +2534,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap-table@npm:^1.21.1":
+"bootstrap-table@npm:1.21.1":
   version: 1.21.1
   resolution: "bootstrap-table@npm:1.21.1"
   peerDependencies:
@@ -2526,13 +2543,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bootstrap@npm:^4.5.0":
-  version: 4.6.2
-  resolution: "bootstrap@npm:4.6.2"
+"bootstrap@npm:^5.1.3, bootstrap@npm:^5.2.0":
+  version: 5.2.3
+  resolution: "bootstrap@npm:5.2.3"
   peerDependencies:
-    jquery: 1.9.1 - 3
-    popper.js: ^1.16.1
-  checksum: 3f4e7768ff7d618c49d4bf4f02aa54a9bfb679d4eecb0f3854fa4af1a17b9114b147009c435946432cdd1572efffc71d88ec385c55943a12fa66253cde0876b0
+    "@popperjs/core": ^2.11.6
+  checksum: 0211805dec6a190c0911d142966df30fdb4b4139a04cc6c23dd83c6045ea3cb0a966b360ab2e701e7b3ad96ff01e05fdc0914be97b41bd876b11e457a8bdc6a3
   languageName: node
   linkType: hard
 
@@ -4845,7 +4861,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jquery@npm:>=3.2.1, jquery@npm:^3.5.1":
+"jquery@npm:3.6.1":
   version: 3.6.1
   resolution: "jquery@npm:3.6.1"
   checksum: 6177d866a74f1137cad800f142c7cdbd5ab19cd4282546f8bdb4890c9f933b1d542ab96f2aa15d007e43c98de7315b0513e849ec5359d3ac5640f720892fe547
@@ -6776,21 +6792,25 @@ __metadata:
     "@babel/preset-env": ^7.20.2
     "@eonasdan/tempus-dominus": ^6.2.7
     "@fortawesome/fontawesome-free": ^6.2.1
-    "@hotwired/stimulus": ^3.1.1
+    "@hotwired/stimulus": ^3.0.0
+    "@hotwired/turbo": ^7.0.1
+    "@popperjs/core": ^2.11.6
     "@symfony/stimulus-bridge": ^3.2.1
-    "@symfony/webpack-encore": ^4.1.1
+    "@symfony/ux-turbo": "file:vendor/symfony/ux-turbo/assets"
+    "@symfony/webpack-encore": ^4.1.2
     bazinga-translator: ^3.0.1
-    bootstrap: ^4.5.0
-    bootstrap-table: ^1.21.1
+    bootstrap: ^5.2.0
+    bootstrap-table: 1.21.1
     core-js: ^3.0.0
     file-loader: ^6.0.0
-    jquery: ^3.5.1
+    jquery: 3.6.1
     node-sass: ^8.0.0
     popper.js: ^1.16.1
     regenerator-runtime: ^0.13.2
     sass-loader: ^13.2.0
     select2: ^4.1.0-rc.0
-    sweetalert2: ^9.13.1
+    select2-bootstrap-5-theme: ^1.3.0
+    sweetalert2: ^10
     tableexport.jquery.plugin: ^1.26.0
     webpack: ^5.75.0
     webpack-cli: ^4.9.2
@@ -6913,6 +6933,15 @@ __metadata:
   version: 2.0.0
   resolution: "select-hose@npm:2.0.0"
   checksum: d7e5fcc695a4804209d232a1b18624a5134be334d4e1114b0721f7a5e72bd73da483dcf41528c1af4f4f4892ad7cfd6a1e55c8ffb83f9c9fe723b738db609dbb
+  languageName: node
+  linkType: hard
+
+"select2-bootstrap-5-theme@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "select2-bootstrap-5-theme@npm:1.3.0"
+  dependencies:
+    bootstrap: ^5.1.3
+  checksum: 248a8698352109c33c462d4f08d1f6afd31d633a36c854a89b37719b6927d07b14f0909214db780ad779ae461bb6e48587fdb74f71f0ee6731981fb9aa668364
   languageName: node
   linkType: hard
 
@@ -7444,10 +7473,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sweetalert2@npm:^9.13.1":
-  version: 9.17.2
-  resolution: "sweetalert2@npm:9.17.2"
-  checksum: a670a45cea2b8eb2849779537256b4c96d90451e687d97cba1440caa2f625cd7bbe172e8fd50c285cad76b5c894f7352d884cb9a41151f1e77f73d57f94fe787
+"sweetalert2@npm:^10":
+  version: 10.16.11
+  resolution: "sweetalert2@npm:10.16.11"
+  checksum: 21ad592c96f03a8b9bc87755a0627646584a41dd328c3da1dea4429d8b49d616358a2c47011575ef521ccad46f27544a3a83fcbafeb0b87d0a909af2e639199e
   languageName: node
   linkType: hard
 

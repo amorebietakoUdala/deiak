@@ -1,0 +1,51 @@
+<table id="taula" class="table bootstrap-table mt-3"
+   {{ stimulus_controller('table', { 
+      'url': path('topic_index'),
+		'exportName': 'topics',
+   }) }}
+   data-table-target="table" 
+   data-page-number="{{ page }}" 
+   data-page-size="{{ pageSize }}"
+   data-page-sortName="{{ sortName }}"
+   data-page-sortOrder="{{ sortOrder }}">
+   <thead>
+      <tr>
+         <th data-sortable="true">{{"topic.id" | trans | capitalize}}</th>
+         <th data-sortable="true">{{"topic.descriptionEs" | trans | capitalize}}</th>
+         <th data-sortable="true">{{"topic.descriptionEu" | trans | capitalize}}</th>
+         <th data-sortable="true" data-field="options">{{"table.options" | trans | capitalize}}</th>
+      </tr>
+   </thead>
+   <tbody>
+      {% if topics is defined and topics |length > 0 %}
+         {% for topic in topics %}
+            <tr>
+               <td>{{ topic.id }}</td>
+               <td>{{ topic.descriptionEs }}</td>
+               <td>{{ topic.descriptionEu }}</td>
+               <td>
+                  <a href="{{ path('topic_show', {'id': topic.id })}}" title="{{ 'consultation.show' | trans | capitalize }}"
+                  	data-action="click->table#onClick" data-pagination="false">
+                     <i class="fa fa-eye"></i>
+                  </a>&nbsp;
+                  <a href="{{ path('topic_edit', {'id': topic.id })}}" title="{{ 'consultation.edit' | trans | capitalize }}"
+                     data-action="click->table#onClick" data-pagination="false">
+                     <i class="fa fa-edit"></i>
+                  </a>&nbsp;
+                  <a href="{{ path ("topic_delete",{"id" : topic.id}) }}" title="{{ 'consultation.delete' | trans | capitalize }}"
+                     data-action="click->table#onClick" 
+                     data-pagination="true"
+                     data-return="false"
+                     data-confirm="true">
+                     <i class="fa fa-trash"></i>
+                  </a>&nbsp;
+               </td>
+            </tr>
+         {% endfor %}
+      {% else %}
+         <tr>
+            <td colspan="6">{{"messages.results0" | trans }}</td>
+         </tr>
+      {% endif %}
+   </tbody>
+</table>

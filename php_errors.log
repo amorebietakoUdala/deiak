@@ -1,0 +1,203 @@
+[14-Dec-2022 09:18:33 Europe/Berlin] 2022-12-14T09:18:33+01:00 [info] User Deprecated: Since symfony/cache 5.4: "Symfony\Component\Cache\DoctrineProvider" is deprecated, use "Doctrine\Common\Cache\Psr6\DoctrineProvider" instead.
+[14-Dec-2022 09:18:33 Europe/Berlin] 2022-12-14T09:18:33+01:00 [info] User Deprecated: Since symfony/cache 5.4: "Symfony\Component\Cache\DoctrineProvider" is deprecated, use "Doctrine\Common\Cache\Psr6\DoctrineProvider" instead.
+[14-Dec-2022 09:18:33 Europe/Berlin] 2022-12-14T09:18:33+01:00 [info] User Deprecated: Since symfony/cache 5.4: "Symfony\Component\Cache\DoctrineProvider" is deprecated, use "Doctrine\Common\Cache\Psr6\DoctrineProvider" instead.
+[14-Dec-2022 09:18:48 Europe/Berlin] 2022-12-14T09:18:48+01:00 [info] User Deprecated: Since symfony/cache 5.4: "Symfony\Component\Cache\DoctrineProvider" is deprecated, use "Doctrine\Common\Cache\Psr6\DoctrineProvider" instead.
+[14-Dec-2022 09:18:48 Europe/Berlin] 2022-12-14T09:18:48+01:00 [info] User Deprecated: Since symfony/cache 5.4: "Symfony\Component\Cache\DoctrineProvider" is deprecated, use "Doctrine\Common\Cache\Psr6\DoctrineProvider" instead.
+[14-Dec-2022 09:18:48 Europe/Berlin] 2022-12-14T09:18:48+01:00 [info] User Deprecated: Since symfony/cache 5.4: "Symfony\Component\Cache\DoctrineProvider" is deprecated, use "Doctrine\Common\Cache\Psr6\DoctrineProvider" instead.
+[15-Dec-2022 13:15:35 Europe/Berlin] PHP Fatal error:  Cannot declare class App\Controller\BaseController, because the name is already in use in /var/www/SF5/deiak/src/Controller/BaseController.php on line 10
+[15-Dec-2022 13:16:39 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:16:44 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:17:14 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:17:16 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:19:22 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:19:30 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:20:19 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:20:26 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:22:03 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:25:30 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:26:20 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:26:34 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:33:13 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:41:06 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:42:35 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:42:44 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:44:26 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:44:33 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:45:30 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:45:39 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:46:28 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:47:43 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:49:28 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:50:03 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:52:08 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:55:08 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:57:07 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:57:18 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:57:29 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:57:33 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:57:55 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:57:59 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:58:02 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 13:58:29 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:00:00 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:00:23 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:00:37 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:01:07 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:02:21 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:02:25 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:05:08 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:05:25 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:05:51 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:06:47 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:08:40 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:08:53 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:09:08 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:09:45 Europe/Berlin] PHP Fatal error:  Uncaught LogicException: Symfony Runtime is missing. Try running "composer require symfony/runtime". in /var/www/SF5/deiak/bin/console:8
+Stack trace:
+#0 {main}
+  thrown in /var/www/SF5/deiak/bin/console on line 8
+[15-Dec-2022 14:12:47 Europe/Berlin] PHP Fatal error:  Cannot declare class App\Controller\BaseController, because the name is already in use in /var/www/SF5/deiak/src/Controller/BaseController.php on line 10
+[15-Dec-2022 14:17:20 Europe/Berlin] PHP Fatal error:  Cannot declare class App\Controller\BaseController, because the name is already in use in /var/www/SF5/deiak/src/Controller/BaseController.php on line 10
+[15-Dec-2022 14:20:11 Europe/Berlin] PHP Fatal error:  Cannot declare class App\Controller\BaseController, because the name is already in use in /var/www/SF5/deiak/src/Controller/BaseController.php on line 10
+[15-Dec-2022 14:20:30 Europe/Berlin] PHP Fatal error:  Cannot declare class App\Controller\BaseController, because the name is already in use in /var/www/SF5/deiak/src/Controller/BaseController.php on line 10

@@ -4,6 +4,7 @@ namespace App\Form;
 
 use App\Entity\Consultation;
 use App\Entity\Topic;
+use App\Repository\TopicRepository;
 use App\Validator\CheckboxRequired;
 use DateTime;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -15,6 +16,12 @@ use Symfony\Component\Validator\Constraints\IsTrue;
 
 class ConsultationFormType extends AbstractType
 {
+    public TopicRepository $repo;
+
+    public function __construct(TopicRepository $repo) {
+        $this->repo = $repo;
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $locale = $options['locale'];
@@ -22,17 +29,17 @@ class ConsultationFormType extends AbstractType
             // ->add('startDate', DateTimeType::class, [
             //     'widget' => 'single_text',
             //     'html5' => false,
-            //     'format' => 'yyyy-MM-dd HH:mm:ss',
+            //     'format' => 'yyyy-MM-dd HH:mm',
             // ])
             ->add('endDate', DateTimeType::class, [
                 'widget' => 'single_text',
                 'html5' => false,
-                'format' => 'yyyy-MM-dd HH:mm:ss',
-                'empty_data' => (new DateTime())->format('Y-m-d H:i:s'),
+                'format' => 'yyyy-MM-dd HH:mm',
+                'empty_data' => (new DateTime())->format('Y-m-d H:i'),
             ])
             ->add('topic', EntityType::class, [
-                //                'class' => 'App:Topic',
                 'class' => Topic::class,
+                'query_builder' => $this->repo->findTopicsOrdererQB($locale),
                 'choice_label' => function (?Topic $topic) use ($locale) {
                     if ($locale == 'es') {
                         return $topic->getDescriptionEs();

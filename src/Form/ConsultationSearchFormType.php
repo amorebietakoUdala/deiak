@@ -4,15 +4,22 @@ namespace App\Form;
 
 use App\Entity\Consultation;
 use App\Entity\Topic;
+use App\Repository\TopicRepository;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ConsultationSearchFormType extends AbstractType
 {
+
+    private TopicRepository $repo;
+
+    public function __construct( TopicRepository $repo ) {
+        $this->repo = $repo;
+    }
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $locale = $options['locale'];
@@ -29,6 +36,7 @@ class ConsultationSearchFormType extends AbstractType
             ])
             ->add('topic', EntityType::class, [
                 'class' => Topic::class,
+                'query_builder' => $this->repo->findTopicsOrdererQB($locale),
                 'multiple' => true,
                 'choice_label' => function (Topic $topic) use ($locale) {
                     if ($locale === 'es') {

@@ -9,17 +9,17 @@
       <div class="row">
          <div class="col-lg-3 col-md-4">
             <label class="js-startDate-label" for="startDate">{{ 'consultation.startDate' | trans | capitalize }}</label>
-            {{ form_widget(form.startDate, { 'attr': { 'class' : 'form-control js-datepicker' } }) }}
+            {{ form_widget(form.startDate, { 'attr': { 'class' : 'form-control', 'data-controller' : 'datetimepicker' }} ) }}
             {{ form_errors(form.startDate) }}
          </div>
          <div class="col-lg-3 col-md-4">
             <label class="js-endDate-label" for="endDate">{{ 'consultation.endDate' | trans | capitalize }}</label>
-            {{ form_widget(form.endDate, { 'attr': { 'class' : 'form-control js-datepicker' } }) }}
+            {{ form_widget(form.endDate, { 'attr': { 'class' : 'form-control', 'data-controller' : 'datetimepicker' }}  ) }}
             {{ form_errors(form.endDate) }}
          </div>
          <div class="col-lg-3 col-md-4">
             <label for="topic">{{ 'consultation.topic' | trans | capitalize }}</label>
-            {{ form_widget(form.topic, { 'attr': { 'class' : 'form-control js-topic' } }) }}
+            {{ form_widget(form.topic, { 'attr': { 'class' : 'form-control', 'data-controller' : 'select2' } }) }}
             {{ form_errors(form.topic) }}
          </div>
          <div class="col-lg-3 col-md-4 d-flex align-items-end">

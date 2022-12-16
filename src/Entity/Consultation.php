@@ -111,4 +111,24 @@ class Consultation
 
         return $this;
     }
+
+    public function filterToArray(): array
+    {
+        $consultationArray = [];
+        if ( $this->startDate !== null ) {
+            $consultationArray['startDate'] = $this->startDate->format('Y-m-d H:i:s');
+        }
+        if ( $this->endDate !== null ) {
+            $consultationArray['endDate'] = $this->endDate->format('Y-m-d H:i:s');
+        }
+        if (count($this->topic) > 0 ) {
+            $topics = [];
+            foreach($this->getTopic() as $topic) {
+                $topics[] = $topic->getId();
+            }
+            $consultationArray['topic'] = implode(',', $topics);
+        }
+
+        return $consultationArray;
+    }
 }

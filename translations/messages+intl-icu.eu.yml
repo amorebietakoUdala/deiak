@@ -42,10 +42,10 @@ table.options: "Aukerak"
 # Menu
 navitem.topics: "Gaiak"
 navitem.topic.new: "Gai berria"
-navitem.topic.list: "Zerrenda"
+navitem.topic.index: "Zerrenda"
 navitem.consultations: "Kontsultak"
 navitem.consultation.new: "Kontsulta berria"
-navitem.consultation.list: "Zerrenda"
+navitem.consultation.index: "Zerrenda"
 
 # Entities labels
 topic.id: "Id"

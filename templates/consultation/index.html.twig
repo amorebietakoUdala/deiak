@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ 'List Consultations' | trans }}
+{% endblock %}
+
+{% block body %}
+	<main class="container-fluid">
+		<div class="mt-2">
+			{{ include('consultation/_searchForm.html.twig',{
+	    'readonly': false,
+			    }) }}
+		</div>
+		<div class="container-fluid" {{ stimulus_controller('table', 
+				{ 'url': path('consultation_index'),
+				  'exportName': 'consultations',
+				  'filters': filters is defined ? filters : {},
+	 		})}}  data-table-target="content">
+			{{ include('consultation/_list.html.twig',{
+				'consultations': consultations,
+			})}}
+			{{ include('common/_alert.html.twig') }}
+		</div>
+	</main>
+{% endblock %}
