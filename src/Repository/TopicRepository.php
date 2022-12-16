@@ -19,22 +19,27 @@ class TopicRepository extends ServiceEntityRepository
         parent::__construct($registry, Topic::class);
     }
 
-    // /**
-    //  * @return Topic[] Returns an array of Topic objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
+    public function findTopics(array $topics) {
         return $this->createQueryBuilder('t')
-            ->andWhere('t.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('t.id', 'ASC')
-            ->setMaxResults(10)
+            ->andWhere('t.id in (:topics)')
+            ->setParameter('topics', $topics)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
+
+    /**
+     * @return Topic[] Returns an array of Topic objects
+     */
+    public function findTopicsOrdererQB($locale = 'es')
+    {
+        $qb = $this->createQueryBuilder('t');
+        if ($locale === 'es') {
+            $qb->orderBy('t.descriptionEs', 'ASC');
+        } else {
+            $qb->orderBy('t.descriptionEu', 'ASC');
+        }
+        return $qb;
+    }
 
     /*
     public function findOneBySomeField($value): ?Topic

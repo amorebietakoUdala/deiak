@@ -3,16 +3,9 @@ const translations = require('../../../public/translations/' + Translator.locale
 
 import Swal from 'sweetalert2';
 
-export function showAlert(title, html, confirmationButtonText, cancelButtonText, confirmURL) {
+export function showAlert(confirmURL) {
     Swal.fire({
-        title: title,
-        html: html,
-        type: 'warning',
-        showCancelButton: true,
-        cancelButtonText: cancelButtonText,
-        confirmButtonColor: '#3085d6',
-        cancelButtonColor: '#d33',
-        confirmButtonText: confirmationButtonText,
+        template: '#confirm'
     }).then(function (result) {
         if (result.value) {
             document.location.href = confirmURL;
@@ -43,13 +36,11 @@ export function showAlertNoRedirection(title, html, confirmationButtonText, canc
 }
 
 export function createConfirmationAlert(confirmURL) {
-    Translator.fromJSON(translations);
-
-    showAlert(
-        Translator.trans('messages.confirmacion'),
-        Translator.trans('messages.confirmationDetail'),
-        Translator.trans('messages.si'),
-        Translator.trans('messages.no'),
-        confirmURL
-    );
+    Swal.fire({
+        template: '#confirm'
+    }).then(function (result) {
+        if (result.value) {
+            document.location.href = confirmURL;
+        }
+    });
 }

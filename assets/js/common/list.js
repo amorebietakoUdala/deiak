@@ -1,4 +1,4 @@
-import '../../css/common/table_list.scss';
+import '../../css/common/list.scss';
 
 import $ from 'jquery';
 

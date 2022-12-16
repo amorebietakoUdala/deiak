@@ -10,21 +10,18 @@
 		{% if ( new == false ) %}
 			<div class="col-lg-3 col-md-4">
 				<label class="js-endDate-label" for="endDate">{{ 'consultation.endDate' | trans | capitalize }}</label>
-				{{ form_widget(form.endDate, { 'attr': { 'class' : 'form-control js-datepicker' } }) }}
+				{{ form_widget(form.endDate, { 'attr': { 'class' : 'form-control', 'data-controller' : 'datetimepicker' } }) }}
 				{{ form_errors(form.endDate) }}
 			</div>
 		{% endif %}
 	</div>
 </div>
 <div class="container">
-	{% for t in form.topic %}
-		<div class="col form-check-inline">
-			<label class="form-check-label">
-				{{ form_widget(t,{'attr': { 'class': 'form-check-input' } }) }}
-				<span>{{ t.vars.label }}</span>
-			</label>
-		</div>
-	{% endfor %}
+	<div class="row">
+		{% for t in form.topic %}
+			{{ form_widget(t,{'attr': { 'class': 'form-check-input' } }) }}
+		{% endfor %}
+	</div>
 	<div class="text-danger form-error">
 		{{ form_errors(form.topic) }}
 	</div>
@@ -32,9 +29,13 @@
 <div class="container mt-2">
 	<div class="row">
 		{% if (saveButton == true) %}
-			<button class="col-3 btn btn-primary form-control mr-2" type="submit" formnovalidate>{{"btn.save" | trans | capitalize}}</button>
+			<div class="col-2">
+				<button class="btn btn-primary form-control mr-2" type="submit" formnovalidate>{{"btn.save" | trans | capitalize}}</button>
+			</div>
 		{% endif %}
-		<button id="cancel" class="col-3 btn btn-primary form-control" type="button">{{"btn.cancel" | trans | capitalize}}</button>
+		<div class="col-2">
+			<a href="{{ returnUrl is defined and not returnUrl is empty ? returnUrl : path('consultation_index') }}" id="cancel" class="btn btn-secondary form-control" type="button">{{"btn.cancel" | trans | capitalize}}</a>
+		</div>
 	</div>
 </div>
 {{ form_widget(form._token) }}

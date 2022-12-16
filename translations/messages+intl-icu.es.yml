@@ -42,10 +42,10 @@ table.options: "Opciones"
 # Menu
 navitem.topics: "Temas"
 navitem.topic.new: "Nuevo Tema"
-navitem.topic.list: "Listado"
+navitem.topic.index: "Listado"
 navitem.consultations: "Consultas"
 navitem.consultation.new: "Nueva consulta"
-navitem.consultation.list: "Listado"
+navitem.consultation.index: "Listado"
 
 # Entities labels
 topic.id: "Id"

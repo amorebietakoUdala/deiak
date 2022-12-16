@@ -5,25 +5,26 @@
     })
 }}
 {{ form_errors(form) }}
-   <div class="container">
-      <div class="row">
-         <div class="ml-1">
-            {{ form_row(form.descriptionEs, { 'attr': { 'class' : 'form-control' } }) }}
-            {{ form_errors(form.descriptionEs) }}
-         </div>
-         <div class="ml-1">
-            {{ form_row(form.descriptionEu, { 'attr': { 'class' : 'form-control' } }) }}
-            {{ form_errors(form.descriptionEu) }}
-         </div>
+   <div class="row">
+      <div class="col-lg-auto">
+         {{ form_label(form.descriptionEs) }}
+         {{ form_widget(form.descriptionEs) }}
+         {{ form_errors(form.descriptionEs) }}
+      </div>
+      <div class="col-lg-auto">
+         {{ form_label(form.descriptionEu) }}
+         {{ form_widget(form.descriptionEu) }}
+         {{ form_errors(form.descriptionEu) }}
       </div>
    </div>
-   <div class="container mt-2">
-      <div class="row">
-	{% if (saveButton == true) %}
-	    <button class="col-3 btn btn-primary form-control mr-2" type="submit" formnovalidate>{{"btn.save" | trans | capitalize}}</button>
-	{% endif %}
-	<button id="cancel" class="col-3 btn btn-primary form-control" type="button">{{"btn.cancel" | trans | capitalize}}</button>
+   <div class="row mt-2">
+      {% if (saveButton == true) %}
+         <div class="col-lg-2">
+            <button class="btn btn-primary form-control mr-2" type="submit" formnovalidate>{{"btn.save" | trans | capitalize}}</button>
+         </div>
+      {% endif %}
+      <div class="col-lg-2">
+         <a href="{{ returnUrl is defined and not returnUrl is empty ? returnUrl : path('topic_index') }}" id="cancel" class="btn btn-secondary form-control" type="button">{{"btn.cancel" | trans | capitalize}}</a>
       </div>
    </div>
-
-{{ form_end(form, {'render_rest': true}) }}
+{{ form_end(form) }}

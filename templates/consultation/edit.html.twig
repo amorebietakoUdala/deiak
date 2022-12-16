@@ -3,22 +3,12 @@
 {% block title %}{{ 'Show Topic' | trans }}{% endblock %}
 
 {% block body %}
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
-						{{ include('consultation/_form.html.twig',{
-				'saveButton': true,
-				'new': false
-			    }) }}
+			{{ include('consultation/_form.html.twig',{
+				'saveButton': saveButton,
+				'new': new
+			}) }}
 		</div>
 	</div>
-{% endblock %}
-
-{% block stylesheets %}
-    {{ parent() }}
-		{{ encore_entry_link_tags('consultation_edit') }}
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-		{{ encore_entry_script_tags('consultation_edit') }}
 {% endblock %}

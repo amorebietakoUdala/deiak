@@ -1,4 +1,4 @@
-{% trans_default_domain 'UserBundle' %}
+{% trans_default_domain 'user_bundle' %}
 {% block subject %}
 	{%- autoescape false -%}
 		{{ 'resetting.email.subject'|trans({'%username%': user.username}) }}

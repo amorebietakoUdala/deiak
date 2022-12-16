@@ -2,9 +2,11 @@
 
 namespace App\Controller;
 
+use App\Controller\BController;
 use App\Entity\Topic;
 use App\Form\TopicFormType;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\TopicRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -12,28 +14,39 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/{_locale}")
  */
-class TopicController extends AbstractController
+class TopicController extends BController
 {
+
+    private TopicRepository $repo;
+    private EntityManagerInterface $em;
+    
+    public function __construct(TopicRepository $repo, EntityManagerInterface $em)
+    {
+        $this->repo = $repo;
+        $this->em = $em;
+    }
+
     /**
      * @Route("/topic/new", name="topic_new", options={"expose"=true})
      */
     public function new(Request $request): Response
     {
+        $this->loadQueryParameters($request);
         $form = $this->createForm(TopicFormType::class, new Topic());
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var Topic $topic */
             $topic = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($topic);
-            $em->flush();
+            $this->em->persist($topic);
+            $this->em->flush();
             $this->addFlash('success', 'topic.saved');
-            return $this->redirectToRoute('topic_list');
+            return $this->redirectToRoute('topic_index');
         }
 
-        return $this->render('topic/new.html.twig', [
+        return $this->render('topic/edit.html.twig', [
             'form' => $form->createView(),
+            'saveButton' => true,
         ]);
     }
 
@@ -42,13 +55,14 @@ class TopicController extends AbstractController
      */
     public function show(Request $request, Topic $topic): Response
     {
-
+        $this->loadQueryParameters($request);
         $form = $this->createForm(TopicFormType::class, $topic);
 
         $form->handleRequest($request);
 
-        return $this->render('topic/show.html.twig', [
+        return $this->render('topic/edit.html.twig', [
             'form' => $form->createView(),
+            'saveButton' => false,
         ]);
     }
 
@@ -57,6 +71,7 @@ class TopicController extends AbstractController
      */
     public function edit(Request $request, Topic $topic): Response
     {
+        $this->loadQueryParameters($request);
         $form = $this->createForm(TopicFormType::class, $topic);
 
         $form->handleRequest($request);
@@ -64,15 +79,16 @@ class TopicController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             /** @var Topic $topic */
             $topic = $form->getData();
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($topic);
-            $em->flush();
+            $this->em->persist($topic);
+            $this->em->flush();
             $this->addFlash('success', 'topic.saved');
-            return $this->redirectToRoute('topic_list');
+            unset($this->queryParams['returnUrl']);
+            return $this->redirectToRoute('topic_index');
         }
 
         return $this->render('topic/edit.html.twig', [
             'form' => $form->createView(),
+            'saveButton' => true,
         ]);
     }
 
@@ -81,24 +97,26 @@ class TopicController extends AbstractController
      */
     public function delete(Request $request, Topic $topic): Response
     {
+        $this->loadQueryParameters($request);
         if (count($topic->getConsultations()) > 0) {
             $this->addFlash('error', 'topic.notDeleted');
         } else {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($topic);
-            $em->flush();
+            $this->em->remove($topic);
+            $this->em->flush();
             $this->addFlash('success', 'topic.deleted');
         }
-        return $this->redirectToRoute('topic_list');
+        unset($this->queryParams['returnUrl']);
+        return $this->redirectToRoute('topic_index');
     }
 
     /**
-     * @Route("/topic", name="topic_list", options={"expose"=true})
+     * @Route("/topic", name="topic_index", options={"expose"=true})
      */
-    public function list(): Response
+    public function list(Request $request): Response
     {
-        $topics = $this->getDoctrine()->getManager()->getRepository(Topic::class)->findAll();
-        return $this->render('topic/list.html.twig', [
+        $this->loadQueryParameters($request);
+        $topics = $this->repo->findAll();
+        return $this->render('topic/index.html.twig', [
             'topics' => $topics,
         ]);
     }
