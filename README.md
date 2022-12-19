@@ -16,8 +16,6 @@ sudo apt update
 sudo apt install yarn  
 composer install  
 yarn install  
-php bin/console bazinga:js-translation:dump public --format=json --pattern=/translations/{domain}.{_format} --merge-domains  
-php bin/console fos:js-routing:dump --format=json --target=public/js/fos_js_routes.json  
 yarn build  
 sudo setfacl -R -m u:www-data:rwx -m u:`whoami`:rwx var/cache var/log  
 sudo setfacl -dR -m u:www-data:rwx -m u:`whoami`:rwx var/cache var/log  

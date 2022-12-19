@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "db464413f3807b98375bb084739c74e0",
+    "content-hash": "5c260331de18ad5b7ef49a58062bf24a",
     "packages": [
+        {
+            "name": "amorebietakoudala/stimulus-controller-bundle",
+            "version": "1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/amorebietakoUdala/stimulus-controller-bundle.git",
+                "reference": "c8105c682d1f68ca2a64c5c6a65e958e2846d4fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/amorebietakoUdala/stimulus-controller-bundle/zipball/c8105c682d1f68ca2a64c5c6a65e958e2846d4fb",
+                "reference": "c8105c682d1f68ca2a64c5c6a65e958e2846d4fb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2.5",
+                "symfony/webpack-encore-bundle": "^1.11"
+            },
+            "conflict": {
+                "symfony/flex": "<1.13"
+            },
+            "type": "symfony-bundle",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Amorebietako Udala",
+                    "email": "informatika@amorebieta.eus"
+                }
+            ],
+            "description": "Most usual stimulus controllers",
+            "keywords": [
+                "AmorebietakoUdala",
+                "hotwire",
+                "javascript",
+                "stimulus",
+                "stimulus-controller-bundle"
+            ],
+            "support": {
+                "issues": "https://github.com/amorebietakoUdala/stimulus-controller-bundle/issues",
+                "source": "https://github.com/amorebietakoUdala/stimulus-controller-bundle/tree/1.0"
+            },
+            "time": "2022-12-19T12:46:28+00:00"
+        },
         {
             "name": "amorebietakoudala/user-bundle",
             "version": "1.4.1",

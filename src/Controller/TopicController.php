@@ -81,7 +81,6 @@ class TopicController extends BaseController
             $this->em->persist($topic);
             $this->em->flush();
             $this->addFlash('success', 'topic.saved');
-            unset($this->queryParams['returnUrl']);
             return $this->redirectToRoute('topic_index');
         }
 
@@ -104,7 +103,6 @@ class TopicController extends BaseController
             $this->em->flush();
             $this->addFlash('success', 'topic.deleted');
         }
-        unset($this->queryParams['returnUrl']);
         return $this->redirectToRoute('topic_index');
     }
 
