@@ -5,6 +5,31 @@ __metadata:
   version: 6
   cacheKey: 8
 
+"@amorebietakoudala/stimulus-controller-bundle@file:vendor/amorebietakoudala/stimulus-controller-bundle/assets::locator=root-workspace-0b6124%40workspace%3A.":
+  version: 0.1.0
+  resolution: "@amorebietakoudala/stimulus-controller-bundle@file:vendor/amorebietakoudala/stimulus-controller-bundle/assets#vendor/amorebietakoudala/stimulus-controller-bundle/assets::hash=9167de&locator=root-workspace-0b6124%40workspace%3A."
+  dependencies:
+    "@eonasdan/tempus-dominus": ^6.2.7
+    "@hotwired/stimulus": ^3.0.0
+    bootstrap-table: 1.21.1
+    jquery: 3.6.1
+    select2: ^4.1.0-rc.0
+    select2-bootstrap-5-theme: ^1.3.0
+    sweetalert2: 11.4.8
+    tableexport.jquery.plugin: ^1.26.0
+  peerDependencies:
+    "@eonasdan/tempus-dominus": ^6.2.7
+    "@hotwired/stimulus": ^3.0.0
+    bootstrap-table: 1.21.1
+    jquery: 3.6.1
+    select2: ^4.1.0-rc.0
+    select2-bootstrap-5-theme: ^1.3.0
+    sweetalert2: 11.4.8
+    tableexport.jquery.plugin: ^1.26.0
+  checksum: 78834d89fb46537b2fd43c0b7cffc354b007ffd9922fb4a8646f46ecf732075880696e9dbf0602768ed102619df449778674b7831577e22bf066887b4e3c0884
+  languageName: node
+  linkType: hard
+
 "@ampproject/remapping@npm:^2.1.0":
   version: 2.2.0
   resolution: "@ampproject/remapping@npm:2.2.0"
@@ -1202,7 +1227,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.14.0, @babel/runtime@npm:^7.8.4":
+"@babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.14.0":
+  version: 7.20.6
+  resolution: "@babel/runtime@npm:7.20.6"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 42a8504db21031b1859fbc0f52d698a3d2f5ada9519eb76c6f96a7e657d8d555732a18fe71ef428a67cc9fc81ca0d3562fb7afdc70549c5fec343190cbaa9b03
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.8.4":
   version: 7.20.1
   resolution: "@babel/runtime@npm:7.20.1"
   dependencies:
@@ -1259,14 +1293,14 @@ __metadata:
   linkType: hard
 
 "@eonasdan/tempus-dominus@npm:^6.2.7":
-  version: 6.2.7
-  resolution: "@eonasdan/tempus-dominus@npm:6.2.7"
-  dependencies:
-    "@popperjs/core": ^2.10.1
-  dependenciesMeta:
-    "@popperjs/core":
+  version: 6.2.9
+  resolution: "@eonasdan/tempus-dominus@npm:6.2.9"
+  peerDependencies:
+    "@popperjs/core": ^2.11.6
+  peerDependenciesMeta:
+    "@popperjs/core\"":
       optional: true
-  checksum: 20be49aed85893c1fba5ef14d44c84940b61857ba8b03e5be603f285791b8eb5b23c227d67acf7f429af0436be0f6c58ea626568e5b3af9056c8b2242d87bea7
+  checksum: dbf316c55b6120c550449eab3950f63a4a3799f78bd9f8b7e51ac0fd8960306a0ed62ab9947551976b771f3e817124222e286e64d1018f05531cdac18a701a80
   languageName: node
   linkType: hard
 
@@ -1453,7 +1487,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.10.1, @popperjs/core@npm:^2.11.6":
+"@popperjs/core@npm:^2.11.6":
   version: 2.11.6
   resolution: "@popperjs/core@npm:2.11.6"
   checksum: 47fb328cec1924559d759b48235c78574f2d71a8a6c4c03edb6de5d7074078371633b91e39bbf3f901b32aa8af9b9d8f82834856d2f5737a23475036b16817f0
@@ -2471,13 +2505,6 @@ __metadata:
   version: 0.6.1
   resolution: "batch@npm:0.6.1"
   checksum: 61f9934c7378a51dce61b915586191078ef7f1c3eca707fdd58b96ff2ff56d9e0af2bdab66b1462301a73c73374239e6542d9821c0af787f3209a23365d07e7f
-  languageName: node
-  linkType: hard
-
-"bazinga-translator@npm:^3.0.1":
-  version: 3.0.1
-  resolution: "bazinga-translator@npm:3.0.1"
-  checksum: fc63f1bcd2434f4f88491ff2cfe2bc9c75b43147ffb4907f7c5baf4adf3f27bec37f34a2f787a99174c531f844d50534476e67fc4faee0525f9baac6810a096b
   languageName: node
   linkType: hard
 
@@ -6579,7 +6606,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.13.10, regenerator-runtime@npm:^0.13.2, regenerator-runtime@npm:^0.13.7":
+"regenerator-runtime@npm:^0.13.10, regenerator-runtime@npm:^0.13.11, regenerator-runtime@npm:^0.13.2, regenerator-runtime@npm:^0.13.7":
   version: 0.13.11
   resolution: "regenerator-runtime@npm:0.13.11"
   checksum: 27481628d22a1c4e3ff551096a683b424242a216fee44685467307f14d58020af1e19660bf2e26064de946bad7eff28950eae9f8209d55723e2d9351e632bbb4
@@ -6788,9 +6815,9 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
   dependencies:
+    "@amorebietakoudala/stimulus-controller-bundle": "file:vendor/amorebietakoudala/stimulus-controller-bundle/assets"
     "@babel/core": ^7.20.2
     "@babel/preset-env": ^7.20.2
-    "@eonasdan/tempus-dominus": ^6.2.7
     "@fortawesome/fontawesome-free": ^6.2.1
     "@hotwired/stimulus": ^3.0.0
     "@hotwired/turbo": ^7.0.1
@@ -6798,9 +6825,7 @@ __metadata:
     "@symfony/stimulus-bridge": ^3.2.1
     "@symfony/ux-turbo": "file:vendor/symfony/ux-turbo/assets"
     "@symfony/webpack-encore": ^4.1.2
-    bazinga-translator: ^3.0.1
     bootstrap: ^5.2.0
-    bootstrap-table: 1.21.1
     core-js: ^3.0.0
     file-loader: ^6.0.0
     jquery: 3.6.1
@@ -6808,10 +6833,6 @@ __metadata:
     popper.js: ^1.16.1
     regenerator-runtime: ^0.13.2
     sass-loader: ^13.2.0
-    select2: ^4.1.0-rc.0
-    select2-bootstrap-5-theme: ^1.3.0
-    sweetalert2: ^11.6.15
-    tableexport.jquery.plugin: ^1.26.0
     webpack: ^5.75.0
     webpack-cli: ^4.9.2
     webpack-notifier: ^1.15.0
@@ -7473,10 +7494,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"sweetalert2@npm:^11.6.15":
-  version: 11.6.15
-  resolution: "sweetalert2@npm:11.6.15"
-  checksum: c8272447b97d213a008927c954a6bd467063a3120a324e2a808e52da4342d0f1bb540d5ad0f3faec9880824c1e070e1b2f7845fe83807cd58cd50cca97402be9
+"sweetalert2@npm:11.4.8":
+  version: 11.4.8
+  resolution: "sweetalert2@npm:11.4.8"
+  checksum: 6dcb2eac662a9748a8695ef0614cadfaa4b462e120effc66c0e739320d31818bfd64708a71af4ebfff516bd00a54aeaf0945f5e7564abf714ec9c9cf88c8a174
   languageName: node
   linkType: hard
 

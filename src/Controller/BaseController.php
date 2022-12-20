@@ -18,6 +18,7 @@ class BaseController extends AbstractController
             $request->getMethod() === Request::METHOD_DELETE ) {
             $this->queryParams = $request->query->all();
         }
+//        dump($this->queryParams);
     }
 
     protected function getPaginationParameters() : array {
@@ -26,12 +27,11 @@ class BaseController extends AbstractController
         $sortName = 0;
         $sortOrder = 'asc';
         $returnUrl = null;
-
         if ( array_key_exists ('returnUrl', $this->queryParams) ) {
             $returnUrl = $this->queryParams['returnUrl'];
             $query = parse_url($this->queryParams['returnUrl'], PHP_URL_QUERY);
             parse_str($query,$this->queryParams);
-        } 
+        }
         $page = $this->queryParams['page'] ?? $page;
         $pageSize = $this->queryParams['pageSize'] ?? $pageSize;
         $sortName = $this->queryParams['sortName'] ?? $sortName;
@@ -62,6 +62,7 @@ class BaseController extends AbstractController
     protected function redirectToRoute(string $route, array $parameters = [], int $status = 302): RedirectResponse {
         $paginationParameters = $this->getPaginationParameters();
         $viewParameters = array_merge($parameters, $paginationParameters);
+        unset($viewParameters['returnUrl']);
         return parent::redirectToRoute($route, $viewParameters, $status);
     }    
 }
