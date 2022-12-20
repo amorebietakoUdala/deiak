@@ -10,7 +10,7 @@ export const app = startStimulusApp(require.context(
     true,
     /\.(j|t)sx?$/
 ));
-app.debug = true;
+// app.debug = true;
 
 // register any custom, 3rd party controllers here
 app.register('locale', locale );
