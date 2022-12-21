@@ -116,10 +116,10 @@ class Consultation
     {
         $consultationArray = [];
         if ( $this->startDate !== null ) {
-            $consultationArray['startDate'] = $this->startDate->format('Y-m-d H:i:s');
+            $consultationArray['startDate'] = $this->startDate->format('Y-m-d H:i');
         }
         if ( $this->endDate !== null ) {
-            $consultationArray['endDate'] = $this->endDate->format('Y-m-d H:i:s');
+            $consultationArray['endDate'] = $this->endDate->format('Y-m-d H:i');
         }
         if (count($this->topic) > 0 ) {
             $topics = [];

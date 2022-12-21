@@ -143,7 +143,6 @@ class ConsultationController extends BaseController
             /** @var Consultation $filter */
             $filter = $form->getData();
             $consultations = $this->repo->findByConsultationFilter($filter);
-            //dd($consultations);
             $consultations = array_slice($consultations, 0, $maxResults);
             if ($maxResults === count($consultations)) {
                 $this->addFlash(

@@ -16,33 +16,22 @@ class BaseController extends AbstractController
             $request->getMethod() === Request::METHOD_GET || 
             $request->getMethod() === Request::METHOD_POST || 
             $request->getMethod() === Request::METHOD_DELETE ) {
-            $this->queryParams = $request->query->all();
+            $this->queryParams['page'] = 1;
+            $this->queryParams['pageSize'] = 10;
+            $this->queryParams['sortName'] = 0;
+            $this->queryParams['sortOrder'] = 'asc';
+            $this->queryParams['returnUrl'] = null;
+            $this->queryParams = array_merge($this->queryParams, $request->query->all());
+            if ( $this->queryParams !== null ) {
+                $query = parse_url($this->queryParams['returnUrl'], PHP_URL_QUERY);
+                parse_str($query,$query);
+                $this->queryParams = array_merge($this->queryParams, $query);
+            }
         }
-//        dump($this->queryParams);
     }
 
     protected function getPaginationParameters() : array {
-        $page = 1;
-        $pageSize = 10;
-        $sortName = 0;
-        $sortOrder = 'asc';
-        $returnUrl = null;
-        if ( array_key_exists ('returnUrl', $this->queryParams) ) {
-            $returnUrl = $this->queryParams['returnUrl'];
-            $query = parse_url($this->queryParams['returnUrl'], PHP_URL_QUERY);
-            parse_str($query,$this->queryParams);
-        }
-        $page = $this->queryParams['page'] ?? $page;
-        $pageSize = $this->queryParams['pageSize'] ?? $pageSize;
-        $sortName = $this->queryParams['sortName'] ?? $sortName;
-        $sortOrder = $this->queryParams['sortOrder'] ?? $sortOrder;
-        return [
-            'page' => $page,
-            'pageSize' => $pageSize,
-            'sortName' => $sortName,
-            'sortOrder' => $sortOrder,
-            'returnUrl' => $returnUrl,
-        ];
+        return $this->queryParams;
     }
 
     protected function getAjax(): bool {
