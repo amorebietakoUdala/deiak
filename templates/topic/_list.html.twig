@@ -1,6 +1,5 @@
 <table id="taula" class="table bootstrap-table mt-3"
    {{ stimulus_controller('table', { 
-      'url': path('topic_index'),
 		'exportName': 'topics',
    }) }}
    data-table-target="table" 
@@ -34,7 +33,6 @@
                   </a>&nbsp;
                   <a href="{{ path ("topic_delete",{"id" : topic.id}) }}" title="{{ 'consultation.delete' | trans | capitalize }}"
                      data-action="click->table#onClick" 
-                     data-pagination="true"
                      data-return="false"
                      data-confirm="true">
                      <i class="fa fa-trash"></i>

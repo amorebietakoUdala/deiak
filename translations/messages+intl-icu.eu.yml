@@ -86,6 +86,6 @@ consultation.saved: "Kontsulta behar bezala gorde da"
 consultation.deleted: "Kontsulta behar bezala ezabatu da"
 
 # Error messages
-topic.notDeleted: "Gaia ez ezin da ezabatu zenbaik consultetan ezarrita dagoelako"
-maxResults.reached: "Gehienezko emaitza kopurura heldu zara ({maxResults}). Bilaketa xehaztu mesedez"
+topic.notDeleted: "Gaia ez ezin da ezabatu zenbait kontsultetan ezarrita dagoelako"
+maxResults.reached: "Gehienezko emaitza kopurura heldu zara ({maxResults}). Bilaketa zehaztu mesedez"
 validation.required: "Eremua nahieztaezkoa da."
