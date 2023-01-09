@@ -7,7 +7,7 @@ __metadata:
 
 "@amorebietakoudala/stimulus-controller-bundle@file:vendor/amorebietakoudala/stimulus-controller-bundle/assets::locator=root-workspace-0b6124%40workspace%3A.":
   version: 0.1.0
-  resolution: "@amorebietakoudala/stimulus-controller-bundle@file:vendor/amorebietakoudala/stimulus-controller-bundle/assets#vendor/amorebietakoudala/stimulus-controller-bundle/assets::hash=1c2c7a&locator=root-workspace-0b6124%40workspace%3A."
+  resolution: "@amorebietakoudala/stimulus-controller-bundle@file:vendor/amorebietakoudala/stimulus-controller-bundle/assets#vendor/amorebietakoudala/stimulus-controller-bundle/assets::hash=bb8123&locator=root-workspace-0b6124%40workspace%3A."
   dependencies:
     "@eonasdan/tempus-dominus": 6.1.2
     "@hotwired/stimulus": ^3.0.0
@@ -17,16 +17,7 @@ __metadata:
     select2-bootstrap-5-theme: ^1.3.0
     sweetalert2: 11.4.8
     tableexport.jquery.plugin: ^1.26.0
-  peerDependencies:
-    "@eonasdan/tempus-dominus": 6.1.2
-    "@hotwired/stimulus": ^3.0.0
-    bootstrap-table: 1.21.1
-    jquery: 3.6.1
-    select2: ^4.1.0-rc.0
-    select2-bootstrap-5-theme: ^1.3.0
-    sweetalert2: 11.4.8
-    tableexport.jquery.plugin: ^1.26.0
-  checksum: 9fa6d7bf8815a6cd6c77945cbc082dee80b3cf3efbd949d4a6ee215f45bf89222aef1991add21fe63ed06215c1b95cd706a5e6c0ed6f80496e84cfb56b7fefe4
+  checksum: 90aa4edbcec7740fd7b55ba117f9ca80fcdd5ce3b3e3c770006fa994a8af51dbff2559fd63b6550a827a344c63157bcf1b66b7a24048cfdb11af17eb8fd2050f
   languageName: node
   linkType: hard
 
@@ -1527,11 +1518,8 @@ __metadata:
 
 "@symfony/ux-turbo@file:vendor/symfony/ux-turbo/assets::locator=root-workspace-0b6124%40workspace%3A.":
   version: 0.1.0
-  resolution: "@symfony/ux-turbo@file:vendor/symfony/ux-turbo/assets#vendor/symfony/ux-turbo/assets::hash=5324e9&locator=root-workspace-0b6124%40workspace%3A."
-  peerDependencies:
-    "@hotwired/stimulus": ^3.0.0
-    "@hotwired/turbo": ^7.0.1
-  checksum: 71dde982b47192511b38de2bd1062e9e15a59a8ac1d7e8761209d9c17b2950c9a9f3da8cdf0f521e95ee0034883ba237eb69ff4d95c2c1211f93cb01093c7bf5
+  resolution: "@symfony/ux-turbo@file:vendor/symfony/ux-turbo/assets#vendor/symfony/ux-turbo/assets::hash=4ceccb&locator=root-workspace-0b6124%40workspace%3A."
+  checksum: dd2c756cf4c8048641f69e10f81254952159c7ecbdeace15799677cae7ea605442485a6128eef7768ce2ff0f8819663050e29a193f59db30175006a942ebcd8c
   languageName: node
   linkType: hard
 
@@ -3991,7 +3979,7 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -4949,11 +4937,11 @@ __metadata:
   linkType: hard
 
 "json5@npm:^2.1.2, json5@npm:^2.2.1":
-  version: 2.2.1
-  resolution: "json5@npm:2.2.1"
+  version: 2.2.3
+  resolution: "json5@npm:2.2.3"
   bin:
     json5: lib/cli.js
-  checksum: 74b8a23b102a6f2bf2d224797ae553a75488b5adbaee9c9b6e5ab8b510a2fc6e38f876d4c77dea672d4014a44b2399e15f2051ac2b37b87f74c0c7602003543b
+  checksum: 2a7436a93393830bce797d4626275152e37e877b265e94ca69c99e3d20c2b9dab021279146a39cdb700e71b2dd32a4cebd1514cd57cee102b1af906ce5040349
   languageName: node
   linkType: hard
 
@@ -6750,7 +6738,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.9.0#~builtin<compat/resolve>":
   version: 1.22.1
-  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7
