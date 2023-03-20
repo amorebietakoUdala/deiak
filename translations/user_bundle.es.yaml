@@ -8,3 +8,5 @@ messages:
   izena: "nombre"
   abizenak: "apellidos"
   profila: "perfil"
+
+ROLE_DEIAK: "Usuario"
