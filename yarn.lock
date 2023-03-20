@@ -7,9 +7,9 @@ __metadata:
 
 "@amorebietakoudala/stimulus-controller-bundle@file:vendor/amorebietakoudala/stimulus-controller-bundle/assets::locator=root-workspace-0b6124%40workspace%3A.":
   version: 0.1.0
-  resolution: "@amorebietakoudala/stimulus-controller-bundle@file:vendor/amorebietakoudala/stimulus-controller-bundle/assets#vendor/amorebietakoudala/stimulus-controller-bundle/assets::hash=bb8123&locator=root-workspace-0b6124%40workspace%3A."
+  resolution: "@amorebietakoudala/stimulus-controller-bundle@file:vendor/amorebietakoudala/stimulus-controller-bundle/assets#vendor/amorebietakoudala/stimulus-controller-bundle/assets::hash=5db3f2&locator=root-workspace-0b6124%40workspace%3A."
   dependencies:
-    "@eonasdan/tempus-dominus": 6.1.2
+    "@eonasdan/tempus-dominus": 6.2.10
     "@hotwired/stimulus": ^3.0.0
     bootstrap-table: 1.21.1
     jquery: 3.6.1
@@ -17,7 +17,16 @@ __metadata:
     select2-bootstrap-5-theme: ^1.3.0
     sweetalert2: 11.4.8
     tableexport.jquery.plugin: ^1.26.0
-  checksum: 90aa4edbcec7740fd7b55ba117f9ca80fcdd5ce3b3e3c770006fa994a8af51dbff2559fd63b6550a827a344c63157bcf1b66b7a24048cfdb11af17eb8fd2050f
+  peerDependencies:
+    "@eonasdan/tempus-dominus": 6.2.10
+    "@hotwired/stimulus": ^3.0.0
+    bootstrap-table: 1.21.1
+    jquery: 3.6.1
+    select2: ^4.1.0-rc.0
+    select2-bootstrap-5-theme: ^1.3.0
+    sweetalert2: 11.4.8
+    tableexport.jquery.plugin: ^1.26.0
+  checksum: fc2d6fcbb24c94d3fbe23075b03835eab95dc11cf7553e1e03c023edf8b490fa5093ceb19e868d22c8b8e5b99de5fe894acab7a15b31ff38b27edcbeed591060
   languageName: node
   linkType: hard
 
@@ -1283,15 +1292,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eonasdan/tempus-dominus@npm:6.1.2":
-  version: 6.1.2
-  resolution: "@eonasdan/tempus-dominus@npm:6.1.2"
-  dependencies:
-    "@popperjs/core": ^2.10.1
-  dependenciesMeta:
-    "@popperjs/core":
+"@eonasdan/tempus-dominus@npm:6.2.10":
+  version: 6.2.10
+  resolution: "@eonasdan/tempus-dominus@npm:6.2.10"
+  peerDependencies:
+    "@popperjs/core": ^2.11.6
+  peerDependenciesMeta:
+    "@popperjs/core\"":
       optional: true
-  checksum: 4222c8b0bc8e6a543b6a060f313b168e225f6ce4df53f9c8a1e30cd2fcda1ed8dbba2261a2e7aa7ea9aba4572b3b69f04996aab3b13f47d2d8249130f139f8bd
+  checksum: b86ecc8a6d84627a3b21247657b3deffe98866527c759432c8ab43e53945b915e2b2b0bcb5c7fc361ef2042159066b13788ff790d701fa7896417067dfb8c030
   languageName: node
   linkType: hard
 
@@ -1478,7 +1487,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@popperjs/core@npm:^2.10.1, @popperjs/core@npm:^2.11.6":
+"@popperjs/core@npm:^2.11.6":
   version: 2.11.6
   resolution: "@popperjs/core@npm:2.11.6"
   checksum: 47fb328cec1924559d759b48235c78574f2d71a8a6c4c03edb6de5d7074078371633b91e39bbf3f901b32aa8af9b9d8f82834856d2f5737a23475036b16817f0
@@ -1518,8 +1527,11 @@ __metadata:
 
 "@symfony/ux-turbo@file:vendor/symfony/ux-turbo/assets::locator=root-workspace-0b6124%40workspace%3A.":
   version: 0.1.0
-  resolution: "@symfony/ux-turbo@file:vendor/symfony/ux-turbo/assets#vendor/symfony/ux-turbo/assets::hash=4ceccb&locator=root-workspace-0b6124%40workspace%3A."
-  checksum: dd2c756cf4c8048641f69e10f81254952159c7ecbdeace15799677cae7ea605442485a6128eef7768ce2ff0f8819663050e29a193f59db30175006a942ebcd8c
+  resolution: "@symfony/ux-turbo@file:vendor/symfony/ux-turbo/assets#vendor/symfony/ux-turbo/assets::hash=2bdb5a&locator=root-workspace-0b6124%40workspace%3A."
+  peerDependencies:
+    "@hotwired/stimulus": ^3.0.0
+    "@hotwired/turbo": ^7.0.1
+  checksum: 16d138bedca5575c258c830638a7174f0ce01e0546fde67344538ae17b978a9f68aa81882e0ebe12db11724115bca62e64ff094d1f37c865443f9fefecf85ebf
   languageName: node
   linkType: hard
 
@@ -3979,7 +3991,7 @@ __metadata:
 
 "fsevents@patch:fsevents@~2.3.2#~builtin<compat/fsevents>":
   version: 2.3.2
-  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=18f3a7"
+  resolution: "fsevents@patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"
   dependencies:
     node-gyp: latest
   conditions: os=darwin
@@ -6738,7 +6750,7 @@ __metadata:
 
 "resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.14.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.9.0#~builtin<compat/resolve>":
   version: 1.22.1
-  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=07638b"
+  resolution: "resolve@patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"
   dependencies:
     is-core-module: ^2.9.0
     path-parse: ^1.0.7

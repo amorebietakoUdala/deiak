@@ -17,7 +17,7 @@ use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
 /**
- * @IsGranted("ROLE_USER")
+ * @IsGranted("ROLE_DEIAK")
  */
 class ApiController extends AbstractController
 {

@@ -34,7 +34,7 @@ messages.userSaved: "El usuario se ha guardado correctamente"
 messages.userDeleted: "El usuario se ha eliminado correctamente"
 messages.existingUser: "El nombre de usuario o el email ya existe"
 
-ROLE_USER: "Usuario"
+ROLE_DEIAK: "Usuario"
 ROLE_ADMIN: "Administrador"
 
 table.options: "Opciones"
