@@ -14,10 +14,8 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class ConsultationSearchFormType extends AbstractType
 {
 
-    private TopicRepository $repo;
-
-    public function __construct( TopicRepository $repo ) {
-        $this->repo = $repo;
+    public function __construct(private readonly TopicRepository $repo)
+    {
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)

@@ -15,27 +15,19 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Contracts\Translation\TranslatorInterface;
 
-/**
- * @Route("/{_locale}")
- */
+#[Route(path: '/{_locale}')]
 class ConsultationController extends BaseController
 {
 
-    private ConsultationRepository $repo;
-    private TopicRepository $topicRepo;
-    private EntityManagerInterface $em;
-
-
-    public function __construct(ConsultationRepository $repo, TopicRepository $topicRepo, EntityManagerInterface $em)
+    public function __construct(
+        private readonly ConsultationRepository $repo, 
+        private readonly TopicRepository $topicRepo, 
+        private readonly EntityManagerInterface $em
+        )
     {
-        $this->repo = $repo;
-        $this->topicRepo = $topicRepo;
-        $this->em = $em;
     }
 
-    /**
-     * @Route("/consultation/new", name="consultation_new")
-     */
+    #[Route(path: '/consultation/new', name: 'consultation_new')]
     public function new(Request $request): Response
     {
         $this->loadQueryParameters($request);
@@ -50,7 +42,7 @@ class ConsultationController extends BaseController
             $data = $form->getData();
             if (empty($data->getTopic())) {
                 return $this->render('consultation/edit.html.twig', [
-                    'form' => $form->createView(),
+                    'form' => $form,
                     'saveButton' => true,
                     'new' => true, 
                 ]);
@@ -64,15 +56,13 @@ class ConsultationController extends BaseController
         }
 
         return $this->render('consultation/edit.html.twig', [
-            'form' => $form->createView(),
+            'form' => $form,
             'saveButton' => true,
             'new' => true, 
         ]);
     }
 
-    /**
-     * @Route("/consultation/{id}/edit", name="consultation_edit")
-     */
+    #[Route(path: '/consultation/{id}/edit', name: 'consultation_edit')]
     public function edit(Request $request, Consultation $consultation): Response
     {
         $this->loadQueryParameters($request);
@@ -92,15 +82,13 @@ class ConsultationController extends BaseController
         }
 
         return $this->render('consultation/edit.html.twig', [
-            'form' => $form->createView(),
+            'form' => $form,
             'saveButton' => true,
             'new' => false, 
         ]);
     }
 
-    /**
-     * @Route("/consultation/{id}", name="consultation_show")
-     */
+    #[Route(path: '/consultation/{id}', name: 'consultation_show')]
     public function show(Request $request, Consultation $consultation): Response
     {
         $this->loadQueryParameters($request);
@@ -109,15 +97,13 @@ class ConsultationController extends BaseController
         ]);
 
         return $this->render('consultation/edit.html.twig', [
-            'form' => $form->createView(),
+            'form' => $form,
             'saveButton' => false,
             'new' => false, 
         ]);
     }
 
-    /**
-     * @Route("/consultaion/{id}/delete", name="consultation_delete", options={"expose"=true})
-     */
+    #[Route(path: '/consultaion/{id}/delete', name: 'consultation_delete', options: ['expose' => true])]
     public function delete(Request $request, Consultation $consultation): Response
     {
         $this->loadQueryParameters($request);
@@ -127,9 +113,7 @@ class ConsultationController extends BaseController
         return $this->redirectToRoute('consultation_index', $request->query->all());
     }
 
-    /**
-     * @Route("/consultation", name="consultation_index", options={"expose"=true})
-     */
+    #[Route(path: '/consultation', name: 'consultation_index', options: ['expose' => true])]
     public function list(Request $request, TranslatorInterface $translator): Response
     {
         $this->loadQueryParameters($request);
@@ -157,7 +141,7 @@ class ConsultationController extends BaseController
             }
             return $this->render('consultation/index.html.twig', [
                 'consultations' => $consultations,
-                'form' => $form->createView(),
+                'form' => $form,
                 'filters' => $filter->filterToArray(),
             ]);
         }
@@ -165,7 +149,7 @@ class ConsultationController extends BaseController
 
         return $this->render('consultation/index.html.twig', [
             'consultations' => $consultations,
-            'form' => $form->createView(),
+            'form' => $form,
             'filters' => $consultation->filterToArray(),
         ]);
     }
@@ -186,7 +170,7 @@ class ConsultationController extends BaseController
             $consultation->setEndDate($now->modify('+1 minute'));
         }
         if ( $request->get('topic') && !empty($request->get('topic')) ) {
-            $topics = explode(',', $request->get('topic'));
+            $topics = explode(',', (string) $request->get('topic'));
             $topicsArray = $this->topicRepo->findTopics($topics);
             foreach ( $topicsArray as $topic ) {
                 $consultation->addTopic($topic);
