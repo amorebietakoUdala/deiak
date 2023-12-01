@@ -10,7 +10,7 @@
 		{% if ( new == false ) %}
 			<div class="col-lg-3 col-md-4">
 				<label class="js-endDate-label" for="endDate">{{ 'consultation.endDate' | trans | capitalize }}</label>
-				{{ form_widget(form.endDate, { 'attr': { 'class' : 'form-control', 'data-controller' : 'datetimepicker' } }) }}
+				{{ form_widget(form.endDate, { 'attr': { 'class' : 'form-control form-control-sm', 'data-controller' : 'datetimepicker' } }) }}
 				{{ form_errors(form.endDate) }}
 			</div>
 		{% endif %}
@@ -30,11 +30,11 @@
 	<div class="row">
 		{% if (saveButton == true) %}
 			<div class="col-2">
-				<button class="btn btn-primary form-control mr-2" type="submit" formnovalidate>{{"btn.save" | trans | capitalize}}</button>
+				<button class="btn btn-primary form-control form-control-sm mr-2" type="submit" formnovalidate>{{"btn.save" | trans | capitalize}}</button>
 			</div>
 		{% endif %}
 		<div class="col-2">
-			<a href="{{ returnUrl is defined and not returnUrl is empty ? returnUrl : path('consultation_index') }}" id="cancel" class="btn btn-secondary form-control" type="button">{{"btn.cancel" | trans | capitalize}}</a>
+			<a href="{{ returnUrl is defined and not returnUrl is empty ? returnUrl : path('consultation_index') }}" id="cancel" class="btn btn-secondary" type="button">{{"btn.cancel" | trans | capitalize}}</a>
 		</div>
 	</div>
 </div>

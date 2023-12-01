@@ -12,14 +12,11 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\IsTrue;
 
 class ConsultationFormType extends AbstractType
 {
-    public TopicRepository $repo;
-
-    public function __construct(TopicRepository $repo) {
-        $this->repo = $repo;
+    public function __construct(public TopicRepository $repo)
+    {
     }
 
     public function buildForm(FormBuilderInterface $builder, array $options)

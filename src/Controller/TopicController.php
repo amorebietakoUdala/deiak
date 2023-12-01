@@ -11,23 +11,14 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-/**
- * @Route("/{_locale}")
- */
+#[Route(path: '/{_locale}')]
 class TopicController extends BaseController
 {
-    private TopicRepository $repo;
-    private EntityManagerInterface $em;
-    
-    public function __construct(TopicRepository $repo, EntityManagerInterface $em)
+    public function __construct(private readonly TopicRepository $repo, private readonly EntityManagerInterface $em)
     {
-        $this->repo = $repo;
-        $this->em = $em;
     }
 
-    /**
-     * @Route("/topic/new", name="topic_new", options={"expose"=true})
-     */
+    #[Route(path: '/topic/new', name: 'topic_new', options: ['expose' => true])]
     public function new(Request $request): Response
     {
         $this->loadQueryParameters($request);
@@ -44,14 +35,12 @@ class TopicController extends BaseController
         }
 
         return $this->render('topic/edit.html.twig', [
-            'form' => $form->createView(),
+            'form' => $form,
             'saveButton' => true,
         ]);
     }
 
-    /**
-     * @Route("/topic/{id}", name="topic_show", options={"expose"=true})
-     */
+    #[Route(path: '/topic/{id}', name: 'topic_show', options: ['expose' => true])]
     public function show(Request $request, Topic $topic): Response
     {
         $this->loadQueryParameters($request);
@@ -60,14 +49,12 @@ class TopicController extends BaseController
         $form->handleRequest($request);
 
         return $this->render('topic/edit.html.twig', [
-            'form' => $form->createView(),
+            'form' => $form,
             'saveButton' => false,
         ]);
     }
 
-    /**
-     * @Route("/topic/{id}/edit", name="topic_edit", options={"expose"=true})
-     */
+    #[Route(path: '/topic/{id}/edit', name: 'topic_edit', options: ['expose' => true])]
     public function edit(Request $request, Topic $topic): Response
     {
         $this->loadQueryParameters($request);
@@ -85,14 +72,12 @@ class TopicController extends BaseController
         }
 
         return $this->render('topic/edit.html.twig', [
-            'form' => $form->createView(),
+            'form' => $form,
             'saveButton' => true,
         ]);
     }
 
-    /**
-     * @Route("/topic/{id}/delete", name="topic_delete", options={"expose"=true})
-     */
+    #[Route(path: '/topic/{id}/delete', name: 'topic_delete', options: ['expose' => true])]
     public function delete(Request $request, Topic $topic): Response
     {
         $this->loadQueryParameters($request);
@@ -106,9 +91,7 @@ class TopicController extends BaseController
         return $this->redirectToRoute('topic_index');
     }
 
-    /**
-     * @Route("/topic", name="topic_index", options={"expose"=true})
-     */
+    #[Route(path: '/topic', name: 'topic_index', options: ['expose' => true])]
     public function list(Request $request): Response
     {
         $this->loadQueryParameters($request);

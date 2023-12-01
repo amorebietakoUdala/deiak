@@ -9,37 +9,27 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Symfony\Component\Serializer\Annotation\Ignore;
 
-/**
- * @ORM\Entity(repositoryClass=TopicRepository::class)
- */
-class Topic
+#[ORM\Entity(repositoryClass: TopicRepository::class)]
+class Topic implements \Stringable
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     * @Groups("api_get_consultation_topics")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
+    #[Groups('api_get_consultation_topics')]
     private $id;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Groups("api_get_consultation_topics")
-     */
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Groups('api_get_consultation_topics')]
     private $descriptionEs;
 
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Groups("api_get_consultation_topics")
-     */
+    #[ORM\Column(type: 'string', length: 255)]
+    #[Groups('api_get_consultation_topics')]
     private $descriptionEu;
 
-    /**
-     * @ORM\ManyToMany(targetEntity=Consultation::class, mappedBy="topic")
-     * @ORM\JoinTable(name="consultation_topic")
-     * @Ignore()
-     */
-    private $consultations;
+    #[ORM\JoinTable(name: 'consultation_topic')]
+    #[ORM\ManyToMany(targetEntity: Consultation::class, mappedBy: 'topic')]
+    #[Ignore]
+    private Collection|array $consultations;
 
     public function __construct()
     {
@@ -54,18 +44,16 @@ class Topic
 
     /**
      * @return Collection|Consultation[]
-     * @Groups("not_serialize")
-     * @Ignore()
      */
+    #[Groups('not_serialize')]
+    #[Ignore]
     public function getConsultations(): Collection
     {
         return $this->consultations;
     }
 
-    /**
-     * @Groups("not_serialize")
-     * @Ignore()
-     */
+    #[Groups('not_serialize')]
+    #[Ignore]
     public function addConsultation(Consultation $consultation): self
     {
         if (!$this->consultations->contains($consultation)) {
@@ -76,10 +64,8 @@ class Topic
         return $this;
     }
 
-    /**
-     * @Groups("not_serialize")
-     * @Ignore()
-     */
+    #[Groups('not_serialize')]
+    #[Ignore]
     public function removeConsultation(Consultation $consultation): self
     {
         if ($this->consultations->removeElement($consultation)) {
@@ -129,8 +115,8 @@ class Topic
         return $this;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
-        return $this->getDescriptionEs();
+        return (string) $this->getDescriptionEs();
     }
 }

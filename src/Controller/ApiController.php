@@ -4,11 +4,11 @@ namespace App\Controller;
 
 use App\Entity\Consultation;
 use App\Entity\Topic;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Component\Security\Http\Attribute\IsGranted;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Serializer\Encoder\JsonEncoder;
 use Symfony\Component\Serializer\Encoder\XmlEncoder;
@@ -16,14 +16,12 @@ use Symfony\Component\Serializer\Normalizer\AbstractNormalizer;
 use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 use Symfony\Component\Serializer\Serializer;
 
-/**
- * @IsGranted("ROLE_DEIAK")
- */
+#[IsGranted('ROLE_DEIAK')]
 class ApiController extends AbstractController
 {
-    private $serializer;
+    private readonly Serializer $serializer;
 
-    public function __construct()
+    public function __construct(private readonly EntityManagerInterface $em)
     {
         $encoders = [new XmlEncoder(), new JsonEncoder()];
         $normalizers = [new ObjectNormalizer()];
@@ -31,10 +29,8 @@ class ApiController extends AbstractController
         $this->serializer = new Serializer($normalizers, $encoders);
     }
 
-    /**
-     * @Route("/api/{id}/topics", name="api_get_consultation_topics", options={"expose"=true})
-     */
-    public function getConsultationTopics(Request $request, Consultation $consultation): Response
+    #[Route(path: '/api/{id}/topics', name: 'api_get_consultation_topics', options: ['expose' => true])]
+    public function getConsultationTopics(Consultation $consultation): Response
     {
         $topics = $consultation->getTopic()->toArray();
         $jsonContent = $this->serializer->normalize($topics, 'json', [
@@ -45,15 +41,12 @@ class ApiController extends AbstractController
         return new JsonResponse($jsonContent);
     }
 
-    /**
-     * @Route("/api/consultation/{id}/topic/{topic}/remove", name="api_remove_consultation_topic", options={"expose"=true})
-     */
-    public function removeConsultationTopic(Request $request, Consultation $consultation, Topic $topic): Response
+    #[Route(path: '/api/consultation/{id}/topic/{topic}/remove', name: 'api_remove_consultation_topic', options: ['expose' => true])]
+    public function removeConsultationTopic(Consultation $consultation, Topic $topic): Response
     {
         $consultation->removeTopic($topic);
-        $em = $this->getDoctrine()->getManager();
-        $em->persist($consultation);
-        $em->flush();
+        $this->em->persist($consultation);
+        $this->em->flush();
         return new JsonResponse('OK');
     }
 }

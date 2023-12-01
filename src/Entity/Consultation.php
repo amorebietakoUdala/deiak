@@ -3,43 +3,32 @@
 namespace App\Entity;
 
 use App\Repository\ConsultationRepository;
+use App\Entity\User;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
-/**
- * @ORM\Entity(repositoryClass=ConsultationRepository::class)
- */
+#[ORM\Entity(repositoryClass: ConsultationRepository::class)]
 class Consultation
 {
-    /**
-     * @ORM\Id
-     * @ORM\GeneratedValue
-     * @ORM\Column(type="integer")
-     */
+    #[ORM\Id]
+    #[ORM\GeneratedValue]
+    #[ORM\Column(type: 'integer')]
     private $id;
 
-    /**
-     * @ORM\Column(type="datetime")
-     */
-    private $startDate;
+    #[ORM\Column(type: 'datetime')]
+    private \DateTimeInterface $startDate;
 
-    /**
-     * @ORM\Column(type="datetime",nullable=true)
-     */
-    private $endDate;
+    #[ORM\Column(type: 'datetime', nullable: true)]
+    private ?\DateTimeInterface $endDate = null;
 
-    /**
-     * @ORM\ManyToMany(targetEntity=Topic::class, inversedBy="consultations", cascade={"persist"})
-     * @ORM\JoinTable(name="consultation_topic")
-     */
-    private $topic;
+    #[ORM\JoinTable(name: 'consultation_topic')]
+    #[ORM\ManyToMany(targetEntity: Topic::class, inversedBy: 'consultations', cascade: ['persist'])]
+    private Collection|array $topic;
 
-    /**
-     * @ORM\ManyToOne(targetEntity=User::class)
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $attendedBy;
+    #[ORM\ManyToOne(targetEntity: User::class)]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $attendedBy = null;
 
     public function __construct()
     {

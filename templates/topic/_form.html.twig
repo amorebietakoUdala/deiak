@@ -8,23 +8,23 @@
    <div class="row">
       <div class="col-lg-auto">
          {{ form_label(form.descriptionEs) }}
-         {{ form_widget(form.descriptionEs) }}
+         {{ form_widget(form.descriptionEs, {'attr': {'class': 'form-control form-control-sm'}}) }}
          {{ form_errors(form.descriptionEs) }}
       </div>
       <div class="col-lg-auto">
          {{ form_label(form.descriptionEu) }}
-         {{ form_widget(form.descriptionEu) }}
+         {{ form_widget(form.descriptionEu, {'attr': {'class': 'form-control form-control-sm'}}) }}
          {{ form_errors(form.descriptionEu) }}
       </div>
    </div>
    <div class="row mt-2">
       {% if (saveButton == true) %}
          <div class="col-lg-2">
-            <button class="btn btn-primary form-control mr-2" type="submit" formnovalidate>{{"btn.save" | trans | capitalize}}</button>
+            <button class="btn btn-primary mr-2" type="submit" formnovalidate>{{"btn.save" | trans | capitalize}}</button>
          </div>
       {% endif %}
       <div class="col-lg-2">
-         <a href="{{ returnUrl is defined and not returnUrl is empty ? returnUrl : path('topic_index') }}" id="cancel" class="btn btn-secondary form-control" type="button">{{"btn.cancel" | trans | capitalize}}</a>
+         <a href="{{ returnUrl is defined and not returnUrl is empty ? returnUrl : path('topic_index') }}" id="cancel" class="btn btn-secondary" type="button">{{"btn.cancel" | trans | capitalize}}</a>
       </div>
    </div>
 {{ form_end(form) }}
