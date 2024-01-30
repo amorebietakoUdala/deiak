@@ -7,9 +7,9 @@ use Symfony\Component\Validator\ConstraintValidator;
 
 class CheckboxRequiredValidator extends ConstraintValidator
 {
-    public function validate($value, Constraint $constraint)
+    public function validate($value, Constraint $constraint): void
     {
-        /* @var $constraint \App\Validator\CheckboxRequired */
+        /** @var App\Validator\CheckboxRequired $constraint */
         if (count($value) > 0) {
             return;
         }
