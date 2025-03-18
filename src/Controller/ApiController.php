@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Consultation;
 use App\Entity\Topic;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -30,7 +31,7 @@ class ApiController extends AbstractController
     }
 
     #[Route(path: '/api/{id}/topics', name: 'api_get_consultation_topics', options: ['expose' => true])]
-    public function getConsultationTopics(Consultation $consultation): Response
+    public function getConsultationTopics(#[MapEntity] Consultation $consultation): Response
     {
         $topics = $consultation->getTopic()->toArray();
         $jsonContent = $this->serializer->normalize($topics, 'json', [
@@ -42,7 +43,7 @@ class ApiController extends AbstractController
     }
 
     #[Route(path: '/api/consultation/{id}/topic/{topic}/remove', name: 'api_remove_consultation_topic', options: ['expose' => true])]
-    public function removeConsultationTopic(Consultation $consultation, Topic $topic): Response
+    public function removeConsultationTopic(#[MapEntity] Consultation $consultation, #[MapEntity] Topic $topic): Response
     {
         $consultation->removeTopic($topic);
         $this->em->persist($consultation);

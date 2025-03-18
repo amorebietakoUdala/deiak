@@ -10,6 +10,7 @@ use App\Repository\ConsultationRepository;
 use App\Repository\TopicRepository;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -63,7 +64,7 @@ class ConsultationController extends BaseController
     }
 
     #[Route(path: '/consultation/{id}/edit', name: 'consultation_edit')]
-    public function edit(Request $request, Consultation $consultation): Response
+    public function edit(Request $request, #[MapEntity] Consultation $consultation): Response
     {
         $this->loadQueryParameters($request);
         $form = $this->createForm(ConsultationFormType::class, $consultation, [
@@ -89,7 +90,7 @@ class ConsultationController extends BaseController
     }
 
     #[Route(path: '/consultation/{id}', name: 'consultation_show')]
-    public function show(Request $request, Consultation $consultation): Response
+    public function show(Request $request, #[MapEntity] Consultation $consultation): Response
     {
         $this->loadQueryParameters($request);
         $form = $this->createForm(ConsultationFormType::class, $consultation, [
@@ -104,7 +105,7 @@ class ConsultationController extends BaseController
     }
 
     #[Route(path: '/consultaion/{id}/delete', name: 'consultation_delete', options: ['expose' => true])]
-    public function delete(Request $request, Consultation $consultation): Response
+    public function delete(Request $request, #[MapEntity] Consultation $consultation): Response
     {
         $this->loadQueryParameters($request);
         $this->em->remove($consultation);

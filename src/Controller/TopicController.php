@@ -7,6 +7,7 @@ use App\Entity\Topic;
 use App\Form\TopicFormType;
 use App\Repository\TopicRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Bridge\Doctrine\Attribute\MapEntity;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,7 +42,7 @@ class TopicController extends BaseController
     }
 
     #[Route(path: '/topic/{id}', name: 'topic_show', options: ['expose' => true])]
-    public function show(Request $request, Topic $topic): Response
+    public function show(Request $request, #[MapEntity] Topic $topic): Response
     {
         $this->loadQueryParameters($request);
         $form = $this->createForm(TopicFormType::class, $topic);
@@ -55,7 +56,7 @@ class TopicController extends BaseController
     }
 
     #[Route(path: '/topic/{id}/edit', name: 'topic_edit', options: ['expose' => true])]
-    public function edit(Request $request, Topic $topic): Response
+    public function edit(Request $request, #[MapEntity] Topic $topic): Response
     {
         $this->loadQueryParameters($request);
         $form = $this->createForm(TopicFormType::class, $topic);
@@ -78,7 +79,7 @@ class TopicController extends BaseController
     }
 
     #[Route(path: '/topic/{id}/delete', name: 'topic_delete', options: ['expose' => true])]
-    public function delete(Request $request, Topic $topic): Response
+    public function delete(Request $request, #[MapEntity] Topic $topic): Response
     {
         $this->loadQueryParameters($request);
         if (count($topic->getConsultations()) > 0) {
