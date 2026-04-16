@@ -1,8 +1,6 @@
-{% trans_default_domain domain|default('messages') %}
-
 {% for msg in app.session.flashBag.get('success') %}
 	<div class="alert alert-success">
-		{{ msg | trans}}
+		{{ msg | trans({}, 'messages') }}
 	</div>
 {% endfor %}
 {% for msg in app.session.flashBag.get('error') %}
@@ -10,12 +8,12 @@
 		{% if message is defined %}
 			{{ msg | trans({'%message%' : message},"messages", app.request.locale) }}
 		{% else %}
-			{{ msg | trans }}
+			{{ msg | trans({}, 'messages') }}
 		{% endif %}
 	</div>
 {% endfor %}
 {% for msg in app.session.flashBag.get('warning') %}
 	<div class="alert alert-warning">
-		{{ msg | trans | capitalize }}
+		{{ msg | trans({}, 'messages') | capitalize }}
 	</div>
 {% endfor %}

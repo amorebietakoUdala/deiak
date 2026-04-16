@@ -157,21 +157,21 @@ class ConsultationController extends BaseController
 
     private function createConsultation(Request $request) {
         $consultation = new Consultation();
-        if ( $request->get('startDate') && !empty($request->get('startDate')) ) {
-            $consultation->setStartDate(new DateTime($request->get('startDate')));  
+        if ( $request->query->get('startDate') && !empty($request->query->get('startDate')) ) {
+            $consultation->setStartDate(new DateTime($request->query->get('startDate')));  
         } else {
             $todayStr = (new DateTime())->format('Y-m-d');
             $today = new DateTime($todayStr);
             $consultation->setStartDate($today);
         }
-        if ( $request->get('endDate') && !empty($request->get('endDate')) ) {
-            $consultation->setEndDate(new DateTime($request->get('endDate')));
+        if ( $request->query->get('endDate') && !empty($request->query->get('endDate')) ) {
+            $consultation->setEndDate(new DateTime($request->query->get('endDate')));
         } else {
             $now = new DateTime();
             $consultation->setEndDate($now->modify('+1 minute'));
         }
-        if ( $request->get('topic') && !empty($request->get('topic')) ) {
-            $topics = explode(',', (string) $request->get('topic'));
+        if ( $request->query->get('topic') && !empty($request->query->get('topic')) ) {
+            $topics = explode(',', (string) $request->query->get('topic'));
             $topicsArray = $this->topicRepo->findTopics($topics);
             foreach ( $topicsArray as $topic ) {
                 $consultation->addTopic($topic);

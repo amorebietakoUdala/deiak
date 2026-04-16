@@ -10,3 +10,4 @@ messages:
   profila: "profila"
 
 ROLE_DEIAK: "Erabiltzailea"
+ROLE_USER: "Ez baimendua"

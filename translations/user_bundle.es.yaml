@@ -10,3 +10,4 @@ messages:
   profila: "perfil"
 
 ROLE_DEIAK: "Usuario"
+ROLE_USER: "No autorizado"
