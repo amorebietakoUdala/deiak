@@ -1,16 +1,14 @@
-{% trans_default_domain 'alerts' %}
-
 <template id="confirm">
 	<swal-title>
-		{{ title|default('message.confirmationTitle' | trans)  }}
+		{{ title|default('message.confirmationTitle' | trans({}, 'alerts'))  }}
 	</swal-title>
 	<swal-icon type="question" color="grey"></swal-icon>
-	<swal-html>{{ html|default('message.deletionConfirmationText' | trans) }}</swal-html>
+	<swal-html>{{ html|default('message.deletionConfirmationText' | trans({}, 'alerts')) }}</swal-html>
 	<swal-button type="confirm">
-		{{ btnAccept|default('btn.accept' | trans) }}
+		{{ btnAccept|default('btn.accept' | trans({}, 'alerts')) }}
 	</swal-button>
 	<swal-button type="cancel">
-		{{ btnCancel|default('btn.cancel' | trans) }}
+		{{ btnCancel|default('btn.cancel' | trans({}, 'alerts')) }}
 	</swal-button>
 	<swal-param name="allowEscapeKey" value="false"/>
 	<swal-param name="customClass" value='{ "popup": "my-popup" }'/>
@@ -18,12 +16,12 @@
 
 <template id="error">
 	<swal-title>
-		{{ error|default('message.error' | trans) }}
+		{{ error|default('message.error' | trans({}, 'alerts')) }}
 	</swal-title>
 	<swal-icon type="error" color="red"></swal-icon>
    <swal-html>Loading...</swal-html>
 	<swal-button type="confirm">
-		{{ btnOk|default('btn.ok' | trans) }}
+		{{ btnOk|default('btn.ok' | trans({}, 'alerts')) }}
 	</swal-button>
 	<swal-param name="allowEscapeKey" value="true"/>
 </template>
